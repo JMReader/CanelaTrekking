@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<header th:fragment="header">
+    <nav class="nav85">
+      <img class="nav85__imna" src="img/navultimo.png" >
+      <div class="nav85__contenedor">
+        <ul class="nav85__contenedor--ul">
+          <li><a class="navpc__point" href="/quienesSomos"><i class="fas fa-walking"></i> <div class="li__letras">¿Quienes somos?</div></a></li>
+          <li><a class="navpc__point" href=""><i class="fas fa-map-marked-alt"></i> <div class="li__letras">¿Donde estamos ?</div></a></li>
+          <li><a class="navpc__point" href=""><i class="fas fa-phone"></i> <div class="li__letras">Contactenos</div></a></li>
+          <li th:if="${pag == 'QS'}"><a class="navpc__point"href="index.html"><i class="fas fa-home buscadorResponsive"></i></a></li>
+        </ul>   
+        
+          
+         
+        </div>
+        <div th:switch="${pag}" class="nav85__buscador" >
+        
+        <div th:case="home"  >
+          <a class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/home">Todos</a>
+          <a class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="pun"  >
+          <a class="buscador--flecha" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/puna">Puna</a>
+          <a class="buscador--flecha" href="/valle" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+   		<div th:case="queb" >
+          <a class="buscador--flecha" href="/yungas"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/quebrada">quebrada</a>
+          <a class="buscador--flecha" href="/puna" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="yung"  >
+          <a class="buscador--flecha" href="/home"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/yungas">Yungas</a>
+          <a class="buscador--flecha" href="/quebrada" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+		<div th:case="val"  >
+          <a class="buscador--flecha" href="/puna"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/valle">Valle</a>
+          <a class="buscador--flecha" href="/home" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="QS">
+       
+          <a class="nav85__point" href="/home"><i class="fas fa-home "></i></a>
+ 
+        </div>
+ 
+        </div>
+    </nav>
+    </nav>
+      <nav class="navpc">
+        <img class="navpc__imna" src="img/navultimo.png" >
+        <div class="navpc__contenedor">
+          <ul class="navpc__contenedor--lista">
+            <li><a class="navpc__point" href="/quienesSomos"><i class="fas fa-walking"></i>¿Quienes somos?</a></li>
+            <li><a class="navpc__point" href=""><i class="fas fa-map-marked-alt"></i>¿Donde estamos ?</a></li>
+            <li><a class="navpc__point" href=""><i class="fas fa-phone"></i>Contactenos</a></li>
+          </ul>
+        </div>
+        
+        
+        <div th:switch="${pag}" class="navpc__buscador" >
+       
+        <div th:case="home"  >
+          <a class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/home">Todos</a>
+          <a class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="pun"  >
+          <a class="buscador--flecha" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/puna">Puna</a>
+          <a class="buscador--flecha" href="/valle" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+   		<div th:case="queb" >
+          <a class="buscador--flecha" href="/yungas"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/quebrada">quebrada</a>
+          <a class="buscador--flecha" href="/puna" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="yung"  >
+          <a class="buscador--flecha" href="/home"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/yungas">Yungas</a>
+          <a class="buscador--flecha" href="/quebrada" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+		<div th:case="val"  >
+          <a class="buscador--flecha" href="/puna"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/valle">Valle</a>
+          <a class="buscador--flecha" href="/home" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="QS" >
+       
+         <a class="navpc__point" href="/home"><i class="fas fa-home Ihome"></i></a>
+ 
+        </div>
+      
+      </div>
+      
+      
+      
+      </nav>
+    </header>
+
+
+</html>

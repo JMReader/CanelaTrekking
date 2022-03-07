@@ -1,0 +1,900 @@
+
+header{
+    display: block;    
+}
+
+body{
+    padding-top: 6rem ;
+    max-width: 100vw;
+   background: rgb(179, 216, 255);
+}
+.bodytodos{
+    background-image: url(https://tripin.travel/wp-content/uploads/2020/06/salinas-grandes-jujuy-4.jpg);
+  background-attachment: fixed;
+}
+
+/*navegador para pc*/
+.navpc{
+    position: fixed;
+    margin-top: -6rem;
+    background-color: rgb(37, 115, 153);
+    height: 6rem;
+    width: 100vw;
+    display: inline-block;
+    z-index: 200;
+}
+/*
+.nav{
+    position: fixed;
+    margin-top: -6rem;
+    background-color: rgb(37, 115, 153);
+    height: 6rem;
+    width: 100vw;
+    display: inline-block;
+    z-index: 200;
+}
+*/
+
+.nav__imna{
+    display: inline-block;
+    height: 6rem;
+    width: 18rem;
+}
+.nav__buscador{
+    margin-right:18px;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    display: inline-block;
+}
+.letra{
+   display: inline-block;
+
+}
+.nav__point:link{
+    color: beige;
+}
+.nav__QS{
+    margin-left: 1rem;
+}
+.nav__point:visited{
+    color: rgb(255, 255, 255);
+}
+
+.titulos{
+    padding-top: 12px;
+    margin-left: 3em;
+    font-size: 10px;
+    font-family: quicksand;
+}
+
+.titulos__h1{
+    font-size: 5em;
+    color: #ffe598eb;
+}
+.titulos__h2{
+    font-size: 3em;
+    color: rgb(150 153 231);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*carta del index*/
+
+
+.prueba{
+    font-size: 90px;
+}
+
+.carta__p{
+    margin-left: 10px;
+    margin-bottom: 1.5rem;
+
+}
+.carta {
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    padding: 1em;
+    background-color: rgba(209, 229, 248, 0.8); 
+    width: 90vw; 
+    position: relative;
+    border-radius: 8px;
+    margin-top: 1em;
+    margin-left: 5vw;
+    margin-right: 3vw;
+    z-index: 1;
+    transition: box-shadow .95s;
+    animation-name: aparicion;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+
+}
+
+
+
+
+.carta__img{
+    object-fit: cover;
+    width: 320px;
+    height: 200px;
+    max-width: 100%;
+    border-radius: 4px;
+    float : left;
+    width: 20em;
+    padding: auto;
+    margin-right: 0.5em;
+    overflow: hidden;
+}
+
+.carta:hover{
+box-shadow: 12px 8px 1px rgba(120, 134, 169, 0.95);
+transition: box-shadow .7s;
+}
+
+
+.a_carta{
+    color: black;
+
+}
+.a_carta:hover{
+    color: rgb(0, 0, 0);
+}
+
+.carta__espe i{
+    padding-top: 3px;
+   text-align: center;
+}
+
+.carta__espe{
+    
+    text-align: center;
+    justify-content: space-evenly;
+    max-width: 100vw;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+/*
+ carta espe como estaba con gorw
+.carta__espe{
+    text-align: center;
+    justify-content: space-evenly;
+    max-width: 100vw;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+
+*/
+.carta__espe-i{
+    
+  
+    display: grid;
+    flex-grow: 1;
+    flex-basis: 120px;
+}
+
+/*.carta__espe{
+    max-width: 100vw;
+    position: relative;
+    bottom: 0;
+
+}*/
+.carta__espe p{
+    position: relative;
+    display: inline-block;
+    margin-left: 3px;
+    
+}
+
+
+/*foooter*/
+
+
+.foot{
+    position: relative;
+    padding: 6px;
+    display: inline-block;
+    width: 100vw;
+    height: 3rem;
+    background-color: rgb(37, 115, 153, .8);
+    margin-top: 1.4rem;
+    text-align: center;
+}
+.foot__a{
+    margin: auto 8px;
+    margin-bottom: 0%;
+}
+.foot__a:link{
+    color: beige;
+}
+.foot__a:visited{
+    color: white;
+}
+.foot__leg{
+    position: absolute;
+    font-size: 12px;
+    display: inline;
+    color: white;
+    left: 0%;
+    bottom: 0%;
+}
+
+
+
+
+/*Pagina quienes somos*/
+
+.containerp__quienesomos{
+    display: flex;
+    width: calc(100vw - 22rem);
+    padding-left: 28px;
+    
+}
+
+.containerp__carrousel{
+    background-color: azure;
+    height: 24rem;
+    width: 13.5rem;
+    display: flex;
+    margin-left: 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    object-fit: cover;
+}
+.containerp{
+    padding: 12px;
+    margin-left: 1vw;
+    width: 97vw;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(252, 252, 252, 0.35);
+    box-shadow: 10px 10px 5px 0px rgba(40,139,153,0.75);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(40,139,153,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(40,139,153,0.75);
+animation: apareceropacity 1.8s forwards;
+}
+.containerp__quienesomos{
+    font-size: large;
+   
+    font-weight: 700;
+}
+.imgver{
+    height: 24rem;
+
+}
+.titulosquien{
+    padding: 1rem 0;
+    font-size: 4em;
+    color: rgb(243, 174, 90);
+    text-align: center;
+}
+.mainquien{
+margin-bottom: 1.4rem;
+
+
+}
+@keyframes apareceropacity {
+    From{
+        opacity: 0;
+    }
+    To{
+        opacity: 1;
+    }
+    
+}
+/* falta hacer responsive */ 
+
+
+
+
+
+/*
+parte del responsive */
+@media only screen and (max-width: 525px) {
+    
+    .nav__imna{
+        display: inline;
+        height: 4rem;
+    }
+    header{
+        justify-content: center;
+    }
+
+    h1{
+        padding-right: 0%;
+        margin-right: 0%;
+    }
+    .nav__buscador{
+        position: relative;
+        
+        right: 0%;
+        bottom: 0%;
+        width: 100%;
+        display: inline-block;
+    }
+    .nav__point{
+        font-size: 20px;
+    }
+
+    .carta {
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        padding: 1em;
+        background-color: rgb(209, 229, 248); 
+        width: 90vw; 
+        position: relative;
+        border-radius: 8px;
+  
+       
+       
+        z-index: 1;
+    }
+    body{
+        max-width: 100vw;
+    }
+
+    .foot__leg{
+        position: relative;
+        
+        display: block;
+
+    }
+    
+    .foot{
+
+        height: calc(3rem + 10px);
+
+    }
+}
+
+
+/* responsive para el nav*/
+/*desapaarecer nav85*/
+.nav85{
+    opacity: 0;
+   position: absolute;
+   margin: -500px;
+}
+.buscadorResponsive{
+    color: white;
+    position: absolute;
+    margin: -400px;
+}
+.menu-cel-s{
+    position: absolute;
+    margin: -600px;
+}
+/* trabajar el nav 85*/
+.nav85{
+    z-index: 2;
+    display:flex ;
+    flex-wrap: wrap;
+    position: fixed;
+    align-items: flex-end;
+}
+.nav85__imna{
+    display: inline-block;
+    height: 6rem;
+}
+.nav85__contenedor{
+    
+    justify-content: center;
+    flex-grow: 1;
+    margin-bottom: 0%;
+    padding-bottom: 0;
+    display: flex;
+
+}
+.nav85__contenedor--ul{
+    list-style: none;
+    padding-bottom:0 ;
+    margin-bottom: 0%;
+}
+.nav85__buscador{
+    display: flex ;
+    margin-right: 2em;
+}
+.nav85__point:link{
+color: beige;
+}
+.nav85__point:visited{
+    color: white;
+}
+
+/*barra navegadora para pcs*/
+.buscador--flecha{
+    margin: 0;
+}
+.buscador--flecha:link{
+    color: white;
+}
+.buscador--flecha:visited{
+    color: white;
+}
+.navpc{
+    display:flex ;
+    flex-wrap: wrap;
+    position: fixed;
+    margin-top: -6rem;
+    background-color: rgb(37, 115, 153);
+    height: 6rem;
+    width: 100vw;
+    align-items: flex-end;
+    
+    
+}
+.navpc__contenedor{
+    display: flex;
+    flex-basis: auto;
+    justify-content: center;
+    flex-grow: 1;
+
+}
+.navpc__contenedor--lista{
+    justify-content:center ;
+    display: flex;
+    padding: 0;
+    margin: 0;
+     top: 0;
+    flex-grow: 1;
+}
+
+.navpc__contenedor--lista li{
+    font-size: medium;
+    right: auto;
+    bottom: 0;
+    display: flex;
+    
+}
+
+.navpc__imna{
+    display: flex;
+    flex-grow: 0;
+    height: 6rem;
+    width: 18rem;
+}
+.navpc__buscador{
+    display: flex;
+   
+    margin-right:18px;
+    
+    
+}
+.navpc__point{
+    display: flex;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.navpc__point:link{
+    color: beige;
+}
+.navpc__point:visited{
+    color: rgb(255, 255, 255);
+}
+.navpc__point i{
+margin-right: 6px;
+}
+.Ihome{
+    font-size: 18px;
+    padding-bottom: 6px;
+}
+
+
+/*
+parte del responsive */
+/*hyacer quer funcione le nav responsive*/
+@media screen and (min-width: 100px) AND (max-width: 360px){
+
+    
+    .nav85__buscador{
+        display: flex;
+        font-size: smaller;
+        order: 4;
+        opacity:1;
+        position: relative;
+        padding-top: 12px ;
+        margin: auto;
+        margin: 0;
+        margin-bottom: 4px;
+        
+    }
+    .fa-home{
+        font-size: 18px ;
+        
+        }
+    .li__letras{
+        position: absolute;
+        opacity: 0;
+        margin-top: -440px;
+    }
+    .navpc{
+        position: absolute;
+       opacity: 0;
+       margin: -400px;
+    }
+    .nav85{
+        justify-content: center;
+        opacity: 1;
+        margin: auto;
+        margin-top: -6rem;
+        position: fixed;
+        background-color: rgb(37, 115, 153);
+        height: 5.5rem;
+        width: 100vw;
+        align-content: flex-start;
+    }
+    
+    .nav85__imna{
+        margin-top: 8px;
+        order: 1;
+        display: flex;
+        align-content: center;
+       justify-content: center;
+        height: 3rem;
+        margin-left: 0px;
+    }
+    .nav85__contenedor{
+        display: flex;
+        order: 3;
+        margin-bottom: 0%;
+        padding-bottom: 0;
+        
+        
+    }
+    .nav85__contenedor--ul{
+       display: flex;
+       justify-content: center;
+        list-style: none;
+        padding:0 ;
+        margin-bottom: 0%;
+    }
+    .nav85__contenedor--ul li{
+        padding: 0;
+        margin: 0;
+        font-size: smaller;
+        display: inline-block;
+    }
+
+    .nav85__point {
+        display: flex;
+       margin-bottom: 15px;
+    }
+    .foot__leg{
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 360px) AND (max-width: 500px){
+
+    .navpc{
+        position: absolute;
+       opacity: 0;
+       margin: -400px;
+    }
+    .nav85{
+        opacity: 1;
+        margin: auto;
+        margin-top: -6rem;
+        position: fixed;
+        background-color: rgb(37, 115, 153);
+        height: 6rem;
+        width: 100vw;
+        align-content: flex-start;
+    }
+    
+    .nav85__imna{
+        order: 1;
+        display: flex;
+        align-content: center;
+       justify-content: center;
+        height: 4rem;
+        margin-left: 0px;
+    }
+    .nav85__contenedor{
+        order: 2;
+        margin-bottom: 0%;
+        padding-bottom: 0;
+        display: inline-block;
+    
+    }
+    .nav85__contenedor--ul{
+        list-style: none;
+        padding:0 ;
+        margin-bottom: 0%;
+    }
+    .nav85__contenedor--ul li{
+        padding: 0;
+        margin: 0;
+        font-size: small;
+        
+    }
+
+    .nav85__buscador{
+        margin-left: 6px;
+        margin-top: 12px;
+        font-size: small;
+        position: relative;
+        display: flex;
+       order: 4;
+        
+    }
+    .nav85__point {
+        display: flex;
+       margin-bottom: 15px;
+    }
+ 
+}
+@media screen and (min-width:500px) AND (max-width: 650px) {
+    .fa-home{
+    font-size: 32px;
+    }
+    .navpc{
+        position: absolute;
+       opacity: 0;
+       margin: -400px;
+    }
+    .nav85{
+        opacity: 1;
+        margin: auto;
+        margin-top: -6rem;
+        position: fixed;
+        background-color: rgb(37, 115, 153);
+        height: 6rem;
+        width: 100vw;
+        align-content: flex-start;
+    }
+    
+    .nav85__imna{
+        order: 1;
+        display: flex;
+        align-content: center;
+       justify-content: center;
+        height: 4.5rem;
+        margin-left: 90px;
+    }
+    .nav85__contenedor{
+        order: 3;
+        margin-bottom: 0%;
+        padding-bottom: 0;
+        display: inline-block;
+    
+    }
+    .nav85__contenedor--ul{
+        list-style: none;
+        padding:0 ;
+        margin-bottom: 0%;
+    }
+    .nav85__contenedor--ul li{
+        padding: 0;
+        margin: 0;
+        font-size: small;
+        display: inline-block;
+    }
+    .nav85__buscador{
+        align-content: center;
+        margin-left: 6rem;
+        justify-content: center;
+        order: 2;
+        display: flex ;
+        margin-right: 2em;
+        flex-grow: 1;
+        
+    }
+    .nav85__point {
+        display: flex;
+       margin-bottom: 15px;
+    }
+ 
+
+
+}
+
+
+
+
+@media screen and (min-width: 650px) AND (max-width: 850px) {
+    
+    .fa-home{
+        font-size: 18px ;
+        
+        }
+    .navpc{
+        position: absolute;
+       opacity: 0;
+       margin: -400px;
+       
+    }
+    .nav85{
+        opacity: 1;
+        margin: auto;
+        margin-top: -6rem;
+        position: fixed;
+        background-color: rgb(37, 115, 153);
+        height: 6rem;
+        width: 100vw;
+    }
+}
+@media only screen and (max-width: 525px) {
+    
+    .nav__imna{
+        display: inline;
+        height: 4rem;
+    }
+    header{
+        justify-content: center;
+    }
+
+    h1{
+        padding-right: 0%;
+        margin-right: 0%;
+    }
+    .nav__buscador{
+        position: relative;
+        
+        right: 0%;
+        bottom: 0%;
+        width: 100%;
+        display: inline-block;
+    }
+    .nav__point{
+        font-size: 20px;
+    }
+
+    .carta {
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        padding: 1em;
+        background-color: rgb(209, 229, 248); 
+        width: 90vw; 
+        position: relative;
+        border-radius: 8px;
+  
+       
+       
+        z-index: 1;
+    }
+    body{
+        max-width: 100vw;
+    }
+
+    .foot__leg{
+        position: relative;
+        
+        display: block;
+
+    }
+    
+    .foot{
+
+        height: calc(3rem + 10px);
+
+    }
+}
+
+
+
+/* Media para respnsive en "quienes somos"*/
+@media screen and (max-width: 850px){
+    .titulosquien{
+        padding: 0.8rem 0;
+        font-size: 3em;
+       
+    
+    }
+}
+
+@media screen and (min-width: 650px) AND (max-width: 850px){
+
+    .containerp__quienesomos{
+        font-size: medium;
+    }
+
+
+}
+@media screen and (min-width: 550px) AND (max-width: 749px){
+
+    .containerp__quienesomos{
+        font-size: small;
+              
+    }
+    containerp{
+        padding: 6px;
+    }
+
+    .containerp__carrousel{
+        height: 19.2rem;
+        width:  10.8rem;
+        margin-left: 1rem;
+        border-radius: 8px;
+
+    }
+}
+
+@media screen and (min-width: 375px) AND (max-width: 425px){
+
+    containerp{
+        padding: 4px;
+        margin-left: 1vw;
+        width: 85vw;
+
+    }
+    .containerp__quienesomos{
+        display: flex;
+        width: auto;
+        padding-left: 14px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+    
+    .containerp__carrousel{
+        background-color: azure;
+        height: 18rem;
+        width: 10.125rem;
+        margin-left: 6.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        object-fit: cover;
+        
+    }
+    .imgver{
+        height: 18rem;
+    }    
+}
+
+@media screen and (min-width: 1px) AND (max-width: 375px){
+
+
+    .containerp__quienesomos{
+        font-size: 12px;
+        width: 95%;
+    }
+    containerp{
+        display: flex;
+        width: auto;
+        margin-left: 1vw;
+        width: 75vw;
+
+    }
+    .titulosquien{
+        padding: 0.6rem 0;
+        font-size: 2em;
+       
+    
+    }
+
+
+}
+
+
+
+
+
+/*ANIMACION PARA LA APARICION CON TRANSLATE
+(prueba)
+
+*/
+
+@keyframes aparicion {
+    From{
+        transform: translate(-120%);
+    }
+    To{
+        transform: translate(0);
+    }
+}
+
