@@ -15,22 +15,38 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import kora.jtrekking.model.Circuito;
-import kora.jtrekking.repoDAO.ICircuitoRepoDAO;
-import kora.jtrekking.service.ICircuitoService;
+
+import kora.jtrekking.serviceImp.CircuitoServiceMySQL;
 
 @Controller
 public class Circuitocontroller {
 	private static final Log LOGGER = LogFactory.getLog(Circuitocontroller.class);
+
 	@Autowired
-	ICircuitoRepoDAO repo;
+	CircuitoServiceMySQL repo;
 	
 	
-	@GetMapping("/cargar/circuito")
+	
+	@GetMapping("/circuito/{id}")
+	public String verCirc(Model model, @PathVariable(name="id")Integer id) {
+		Circuito circuitoEncontrado= repo.obtenerCircuitoid(id);
+		model.addAttribute("circ", circuitoEncontrado);
+		model.addAttribute("pag", "QS");	
+		model.addAttribute("recom", repo.obtenerRecomendaciones());	
+		return("circuito");
+	}
+	
+	
+	
+	
+	
+	@GetMapping("cargar/circuito")
 	public String crearCirc(Model model) {
 		LOGGER.info("METHOD: ingresando el metodo cargar");
 		model.addAttribute("circuito", new Circuito());
@@ -51,11 +67,11 @@ public class Circuitocontroller {
 		nuevoCirc.setImagen2(base66);
 		
 		
-		repo.save(nuevoCirc);
+		repo.guardarCircuito(nuevoCirc);
 		
 		
 		
-		return ("redirect:/cargar/circuito");
+		return ("redirect:/admin/cargar/circuito");
 	}
 	
 	

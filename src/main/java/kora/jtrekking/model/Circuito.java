@@ -38,11 +38,11 @@ public class Circuito {
 	@Column
 	private int desnivel;
 	@Column
-	private long duracion;
+	private int duracion;
 	@Column
 	private String operable;
 	@Column
-	private long distancia;
+	private float distancia;
 	@Column
 	private String region;
 	@Lob
@@ -61,15 +61,16 @@ public class Circuito {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Circuito(Integer id, String descripcion, String nombre, String dificultad, int nivelAlt, long duracion,
-			String operable, long distancia, String region, String imagen, String imagen1, String imagen2) {
+	public Circuito(Integer id, String descripcion, String nombre, String vistaprev, String dificultad, int desnivel,
+			int duracion, String operable, float distancia, String region, String imagen, String imagen1,
+			String imagen2) {
 		super();
 		this.id = id;
 		this.descripcion = descripcion;
 		this.nombre = nombre;
+		this.vistaprev = vistaprev;
 		this.dificultad = dificultad;
-		this.desnivel = nivelAlt;
+		this.desnivel = desnivel;
 		this.duracion = duracion;
 		this.operable = operable;
 		this.distancia = distancia;
@@ -78,6 +79,11 @@ public class Circuito {
 		this.imagen1 = imagen1;
 		this.imagen2 = imagen2;
 	}
+
+
+
+
+
 
 
 	// gets y sets
@@ -132,14 +138,6 @@ public class Circuito {
 	}
 
 
-	public long getDuracion() {
-		return duracion;
-	}
-
-
-	public void setDuracion(long duracion) {
-		this.duracion = duracion;
-	}
 
 
 	public String getOperable() {
@@ -152,14 +150,7 @@ public class Circuito {
 	}
 
 
-	public long getDistancia() {
-		return distancia;
-	}
 
-
-	public void setDistancia(long distancia) {
-		this.distancia = distancia;
-	}
 
 
 	public String getRegion() {
@@ -211,30 +202,59 @@ public class Circuito {
 		this.desnivel = desnivel;
 	}
 
+	public String getVistaprev() {
+		return vistaprev;
+	}
+
+
+	public void setVistaprev(String vistaprev) {
+		this.vistaprev = vistaprev;
+	}
+
+
+
+	public int getDuracion() {
+		return duracion;
+	}
+
+
+
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+
+
+	public float getDistancia() {
+		return distancia;
+	}
+
+
+	public void setDistancia(float distancia) {
+		this.distancia = distancia;
+	}
+
 	//hashcod y equlas 
 	
-
-
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+		result = prime * result + desnivel;
 		result = prime * result + ((dificultad == null) ? 0 : dificultad.hashCode());
-		result = prime * result + (int) (distancia ^ (distancia >>> 32));
-		result = prime * result + (int) (duracion ^ (duracion >>> 32));
+		result = prime * result + Float.floatToIntBits(distancia);
+		result = prime * result + duracion;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((imagen == null) ? 0 : imagen.hashCode());
 		result = prime * result + ((imagen1 == null) ? 0 : imagen1.hashCode());
 		result = prime * result + ((imagen2 == null) ? 0 : imagen2.hashCode());
-		result = prime * result + desnivel;
 		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((operable == null) ? 0 : operable.hashCode());
 		result = prime * result + ((region == null) ? 0 : region.hashCode());
+		result = prime * result + ((vistaprev == null) ? 0 : vistaprev.hashCode());
 		return result;
 	}
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -250,12 +270,14 @@ public class Circuito {
 				return false;
 		} else if (!descripcion.equals(other.descripcion))
 			return false;
+		if (desnivel != other.desnivel)
+			return false;
 		if (dificultad == null) {
 			if (other.dificultad != null)
 				return false;
 		} else if (!dificultad.equals(other.dificultad))
 			return false;
-		if (distancia != other.distancia)
+		if (Float.floatToIntBits(distancia) != Float.floatToIntBits(other.distancia))
 			return false;
 		if (duracion != other.duracion)
 			return false;
@@ -279,8 +301,6 @@ public class Circuito {
 				return false;
 		} else if (!imagen2.equals(other.imagen2))
 			return false;
-		if (desnivel != other.desnivel)
-			return false;
 		if (nombre == null) {
 			if (other.nombre != null)
 				return false;
@@ -296,20 +316,21 @@ public class Circuito {
 				return false;
 		} else if (!region.equals(other.region))
 			return false;
+		if (vistaprev == null) {
+			if (other.vistaprev != null)
+				return false;
+		} else if (!vistaprev.equals(other.vistaprev))
+			return false;
 		return true;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Circuito [id=" + id + ", descripcion=" + descripcion + ", nombre=" + nombre + ", dificultad="
-				+ dificultad + ", nivelAlt=" + desnivel + ", duracion=" + duracion + ", operable=" + operable
-				+ ", distancia=" + distancia + ", region=" + region + ", imagen=" + imagen + ", imagen1=" + imagen1
-				+ ", imagen2=" + imagen2 + "]";
+		return "Circuito [id=" + id + ", descripcion=" + descripcion + ", nombre=" + nombre + ", vistaprev=" + vistaprev
+				+ ", dificultad=" + dificultad + ", desnivel=" + desnivel + ", duracion=" + duracion + ", operable="
+				+ operable + ", distancia=" + distancia + ", region=" + region + ", imagen=" + imagen + ", imagen1="
+				+ imagen1 + ", imagen2=" + imagen2 + "]";
 	}
-	
-	
-
 
 	
 	
@@ -319,17 +340,6 @@ public class Circuito {
 	
 	
 
-	
-	
-
-
-	
-
-
-	
-	
-	
-	
 	
 
 }

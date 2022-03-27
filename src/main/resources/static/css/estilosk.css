@@ -76,7 +76,12 @@ body{
     font-size: 3em;
     color: rgb(150 153 231);
 }
-
+.titulos__recomendacion{
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    color: beige;
+}
 
 
 
@@ -305,7 +310,11 @@ margin-bottom: 1.4rem;
 /*
 parte del responsive */
 @media only screen and (max-width: 525px) {
-    
+    .titulos__recomendacion{
+        font-size: 2.5rem;
+
+
+    }
     .nav__imna{
         display: inline;
         height: 4rem;
@@ -494,6 +503,11 @@ margin-right: 6px;
     padding-bottom: 6px;
 }
 
+/*ultima parte de las trarjetas*/
+
+
+
+
 
 /*
 parte del responsive */
@@ -613,12 +627,12 @@ parte del responsive */
     }
     .nav85__contenedor--ul{
         list-style: none;
-        padding:0 ;
+        padding:0% ;
         margin-bottom: 0%;
     }
     .nav85__contenedor--ul li{
-        padding: 0;
-        margin: 0;
+        padding: 0%;
+        margin: 0%;
         font-size: small;
         
     }
@@ -868,6 +882,8 @@ parte del responsive */
         width: auto;
         margin-left: 1vw;
         width: 75vw;
+        
+        
 
     }
     .titulosquien{

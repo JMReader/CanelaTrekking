@@ -16,49 +16,51 @@
           
          
         </div>
-        <div th:switch="${pag}" class="nav85__buscador" >
+        <div class="nav85__buscador">
         
-        <div th:case="home"  >
-          <a class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
-          <a class="nav85__point" href="/home">Todos</a>
-          <a class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
-        </div>
+          <!--Home-->
+          <a th:if="${pag == 'home'}"  class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'home'}" class="nav85__point" href="/home">Todos</a>
+          <a th:if="${pag == 'home'}" class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         
-        <div th:case="pun"  >
-          <a class="buscador--flecha" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
-          <a class="nav85__point" href="/puna">Puna</a>
-          <a class="buscador--flecha" href="/valle" title="Yungas"><i class="fas fa-arrow-right"></i></a>
-        </div>
         
-   		<div th:case="queb" >
-          <a class="buscador--flecha" href="/yungas"><i class="fas fa-arrow-left"></i></a>    
-          <a class="nav85__point" href="/quebrada">quebrada</a>
-          <a class="buscador--flecha" href="/puna" title="Yungas"><i class="fas fa-arrow-right"></i></a>
-        </div>
+         <!--puna-->
+          <a th:if="${pag == 'pun'}" class="buscador--flecha" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'pun'}" class="nav85__point" href="/puna">Puna</a>
+          <a th:if="${pag == 'pun'}" class="buscador--flecha" href="/valle" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         
-        <div th:case="yung"  >
-          <a class="buscador--flecha" href="/home"><i class="fas fa-arrow-left"></i></a>    
-          <a class="nav85__point" href="/yungas">Yungas</a>
-          <a class="buscador--flecha" href="/quebrada" title="Yungas"><i class="fas fa-arrow-right"></i></a>
-        </div>
         
-		<div th:case="val"  >
-          <a class="buscador--flecha" href="/puna"><i class="fas fa-arrow-left"></i></a>    
-          <a class="nav85__point" href="/valle">Valle</a>
-          <a class="buscador--flecha" href="/home" title="Yungas"><i class="fas fa-arrow-right"></i></a>
-        </div>
+           <!--Quebrada-->
+          <a th:if="${pag == 'queb'}" class="buscador--flecha" href="/yungas"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'queb'}" class="nav85__point" href="/quebrada">quebrada</a>
+          <a th:if="${pag == 'queb'}" class="buscador--flecha" href="/puna" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         
-        <div th:case="QS">
-       
-          <a class="nav85__point" href="/home"><i class="fas fa-home "></i></a>
+        
+           <!--Yunga-->
+          <a th:if="${pag == 'yung'}" class="buscador--flecha" href="/home"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'yung'}" class="nav85__point" href="/yungas">Yungas</a>
+          <a th:if="${pag == 'yung'}" class="buscador--flecha" href="/quebrada" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        
+        
+		
+           <!--valle-->
+          <a th:if="${pag == 'val'}" class="buscador--flecha" href="/puna"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'val'}" class="nav85__point" href="/valle">Valle</a>
+          <a th:if="${pag == 'val'}" class="buscador--flecha" href="/home" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        
+        
+        
+           <!--Quienes Somos-->
+          
+          <a th:if="${pag == 'QS'}" class="nav85__point" href="/home"><i class="fas fa-home "></i></a>
  
-        </div>
+        
  
-        </div>
+      </div>
     </nav>
     </nav>
       <nav class="navpc">
-        <img class="navpc__imna" src="img/navultimo.png" >
+        <img class="navpc__imna" src="/img/navultimo.png" >
         <div class="navpc__contenedor">
           <ul class="navpc__contenedor--lista">
             <li><a class="navpc__point" href="/quienesSomos"><i class="fas fa-walking"></i>¿Quienes somos?</a></li>

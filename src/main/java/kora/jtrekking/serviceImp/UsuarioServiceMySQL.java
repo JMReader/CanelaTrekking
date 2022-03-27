@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+
 import kora.jtrekking.model.Usuario;
 import kora.jtrekking.repoDAO.IUsuarioRepoDAO;
 import kora.jtrekking.service.IUsuarioService;
@@ -13,7 +14,8 @@ import kora.jtrekking.service.IUsuarioService;
 @Service
 @Qualifier("implementacionUsuario")
 public class UsuarioServiceMySQL implements IUsuarioService{
-	
+
+
 	@Autowired
 	Usuario unUsuario;
 	@Autowired
@@ -25,7 +27,6 @@ public class UsuarioServiceMySQL implements IUsuarioService{
 		String contra = unUsuario.getClave(); 
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
 		unUsuario.setClave(bCryptPasswordEncoder.encode(contra));
-		
 		repo.save(unUsuario);
 	}
 

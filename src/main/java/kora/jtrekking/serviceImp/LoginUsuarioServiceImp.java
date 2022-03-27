@@ -38,7 +38,7 @@ public class LoginUsuarioServiceImp implements UserDetailsService {
 		tipos.add(grantedAuthority);
 		
 		//devolvemos los detalle del usuario en sesion
-		UserDetails user = (UserDetails) new User(username, encontrado.getClave(), tipos);
+		UserDetails user = (UserDetails) new User(encontrado.getUserName(), encontrado.getClave(), tipos);
 		return user;
 	}
 

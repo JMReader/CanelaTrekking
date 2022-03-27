@@ -17,40 +17,37 @@ import kora.jtrekking.serviceImp.LoginUsuarioServiceImp;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
+    @Autowired
+    private LoginUsuarioServiceImp userDetailsService;
 
-
 	
+ BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder() ;	
 	
-	
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        return bCryptPasswordEncoder;
+    }
+    
+	@Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		
+    	auth.userDetailsService(userDetailsService).passwordEncoder(bcrypt);
+    }
+ 
 	
 	@Override
 	 protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-        .regexMatchers("/admin/.*").hasRole("ADMIN")
-    .anyRequest()
-
-        .permitAll()
+        .antMatchers("/cargar/circuito").authenticated()
+    .anyRequest() .permitAll()
     .and()
         .formLogin();
 		}
-	
-  /*  @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
-        return bCryptPasswordEncoder;
-    }
     
-    @Autowired
-    private LoginUsuarioServiceImp userDetailsService;
 
-    
-    @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-    	auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-    }
- 
 
-*/
+
 
 
     
