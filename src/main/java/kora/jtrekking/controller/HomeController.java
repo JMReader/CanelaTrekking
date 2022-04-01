@@ -38,7 +38,7 @@ public class HomeController {
 		model.addAttribute("pag", "QS");
 		return "quienesSomos";
 	}
-	
+	/* separando los circuitos por region */
 	@GetMapping({"/valle"})
 	public String cargaValle(Model model){
 		model.addAttribute("pag", "val");
@@ -68,7 +68,82 @@ public class HomeController {
 		return "index";
 	}
 	
+	/* separando los circuitos por dificultad*/
+	
+	@GetMapping({"/dif/baja"})
+	public String cargarDificultadBaja(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDifBaja());
+		model.addAttribute("titulo", "Circuitos de Dificultad Baja");
+		return "index";
+	}
+	@GetMapping({"/dif/media"})
+	public String cargarDificultadMedia(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDifMedia());
+		model.addAttribute("titulo", "Circuitos de Dificultad Media");
+		return "index";
+	}
+	@GetMapping({"/dif/alta"})
+	public String cargarDificultadAlta(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDifAlta());
+		model.addAttribute("titulo", "Circuitos de Dificultad Alta");
+		return "index";
+	}
+	
+	/* separando por distancia */
+	
+	@GetMapping({"/dis/uno"})
+	public String cargarDisMenorSeis(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDisSeis());
+		model.addAttribute("titulo", "Circuitos de menos de 6 Km");
+		return "index";
+	}
+	@GetMapping({"/dis/dos"})
+	public String cargarDisMenorDoce(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDisDoce());
+		model.addAttribute("titulo", "Circuitos de menos de 12 Km");
+		return "index";
+	}
+	@GetMapping({"/dis/tres"})
+	public String cargarDisMenorVeinte(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDisDoce());
+		model.addAttribute("titulo", "Circuitos de menos de 20 Km");
+		return "index";
+	}
+	@GetMapping({"/dis/cuatro"})
+	public String cargarDisMayorVeinte(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDisMasVeinte());
+		model.addAttribute("titulo", "Circuitos de más de 20 Km");
+		return "index";
+	}
+	
+	/*filter by time*/
+	
+	@GetMapping({"/circ/dura/uno"})
+	public String cargarDurMenorCuatro(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDurCuatro());
+		model.addAttribute("titulo", "Circuitos de menos de 4 horas");
+		return "index";
+	}
+	
+	@GetMapping({"/circ/dura/dos"})
+	public String cargarDurMenorOcho(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDurOcho());
+		model.addAttribute("titulo", "Circuitos de menos de 8 horas");
+		return "index";
+	}
+	@GetMapping({"/circ/dura/tres"})
+	public String cargarDurMayorOcho(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosDurMasOcho());
+		model.addAttribute("titulo", "Circuitos de más de 8 horas");
+		return "index";
+	}
 	
 	
+	@GetMapping({"/circ/travesias"})
+	public String cargarTravesias(Model model){
+		model.addAttribute("circuitos", circuitoRepo.circuitosTravesias());
+		model.addAttribute("titulo", "Travesias (Circuitos de más de un día)");
+		return "index";
+	}
 	
 	}
