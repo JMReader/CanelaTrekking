@@ -514,7 +514,7 @@ margin-right: 6px;
     display: none;
     padding: 6px;
     padding-left: 3px;
-    opacity: 0;
+    opacity: 1;
     background-color: rgba(54, 135, 175, 0.871);
     width: 14vw;
     height: 20vw;
@@ -524,7 +524,7 @@ margin-right: 6px;
     border-radius: 8px;
     border: 1px solid white;
     border-top: 0;
-    top: 600%;
+    top:-600%;
 }
 .navpc__contenedor--lista li:hover  .contactenos{
     display: flex;
@@ -536,6 +536,7 @@ margin-right: 6px;
     animation: apareceropacity 1.8s forwards;
     top:auto;
 }
+
 
 
 /*parte sacada de chrome xddd*/
@@ -656,7 +657,49 @@ margin-right: 6px;
 }
 
 
+.buscar__ul{
+    display: flex;
+    padding-bottom: 3px ;
+    list-style: none;
+    padding-bottom:0 ;
+    margin-bottom: 0%;    
+    background-color: rgb(37, 115, 153);
+    width: 100vw;
+    height: 25px;
+    justify-content: space-around;
+    border: 1px solid rgb(255, 255, 255);
+    border-top: none;
+   
+}
+.buscar__ul li {
+   
+    user-select: none;
 
+}
+.ul--opc{
+    display:none;
+    margin-top: auto;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(37, 115, 153);
+    color: wheat;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    border-top: 0;
+    position: absolute;
+}
+.buscar--form{
+    margin-right: 20px;
+    right: 12px;
+}
+.buscar__boton{
+    background-color: rgb(37, 115, 153);
+    color: #ffffff;
+}
+.buscar__ul li:hover  .ul--opc{
+    display: flex;
+    animation: apareceropacity 1.8s forwards;
+}
 
 
 
@@ -670,13 +713,11 @@ parte del responsive */
 /*hyacer quer funcione le nav responsive*/
 @media screen and (min-width: 100px) AND (max-width: 360px){
     .contactenos{
-        
         justify-content: center;
         padding: 2px;
         padding-top: 8px;
         height: 30vh;
-        margin-top: 1.8rem;
-        right: 55px;
+        margin-top: 4px;
     }
     .wrapper .icon {
     width: 30px;
@@ -801,12 +842,12 @@ parte del responsive */
        margin: -400px;
     }
     .nav85{
+        display: flex;
         opacity: 1;
         margin: auto;
         margin-top: -6rem;
         position: fixed;
         background-color: rgb(37, 115, 153);
-        height: 6rem;
         width: 100vw;
         align-content: flex-start;
     }
@@ -834,7 +875,7 @@ parte del responsive */
     .nav85__contenedor--ul li{
         padding: 0%;
         margin: 0%;
-        font-size: small;
+        font-size:x-small;
         
     }
 

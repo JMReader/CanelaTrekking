@@ -114,6 +114,7 @@ color: beige;
 }
 .navpc__point i{
 margin-right: 6px;
+padding-top: 4px;
 }
 .Ihome{
     font-size: 18px;
@@ -124,6 +125,7 @@ margin-right: 6px;
 /*
 parte del responsive */
 /*hyacer quer funcione le nav responsive*/
+
 @media screen and (min-width: 100px) AND (max-width: 360px){
 
 
@@ -221,12 +223,13 @@ parte del responsive */
        margin: -400px;
     }
     .nav85{
+        align-items: center;
         opacity: 1;
         margin: auto;
         margin-top: -6rem;
         position: fixed;
         background-color: rgb(37, 115, 153);
-        height: 4.5rem;
+        
         width: 100vw;
         align-content: flex-start;
     }
@@ -378,6 +381,7 @@ parte del responsive */
     .nav__point{
         font-size: 20px;
     }
+
 
     .carta {
         position: relative;
