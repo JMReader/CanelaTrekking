@@ -514,7 +514,7 @@ margin-right: 6px;
     display: none;
     padding: 6px;
     padding-left: 3px;
-    opacity: 1;
+    opacity: 0;
     background-color: rgba(54, 135, 175, 0.871);
     width: 14vw;
     height: 20vw;
@@ -525,12 +525,14 @@ margin-right: 6px;
     border: 1px solid white;
     border-top: 0;
     top:-600%;
+
 }
 .navpc__contenedor--lista li:hover  .contactenos{
     display: flex;
     animation: apareceropacity 1.8s forwards;
-    top:auto;
+    top: auto;
 }
+  
 .nav85__contenedor--ul li:hover  .contactenos{
     display: flex;
     animation: apareceropacity 1.8s forwards;
@@ -658,18 +660,22 @@ margin-right: 6px;
 
 
 .buscar__ul{
-    display: flex;
-    padding-bottom: 3px ;
+    display: none;
+    
     list-style: none;
-    padding-bottom:0 ;
-    margin-bottom: 0%;    
+    padding: 8px 0;
+    margin-bottom: 20px;    
     background-color: rgb(37, 115, 153);
     width: 100vw;
-    height: 25px;
+    
     justify-content: space-around;
     border: 1px solid rgb(255, 255, 255);
     border-top: none;
-   
+   position: absolute;
+   margin-top: 24px;
+   left: 0%;
+   transition: display .95s;
+   transition: animation .95s;
 }
 .buscar__ul li {
    
@@ -678,7 +684,7 @@ margin-right: 6px;
 }
 .ul--opc{
     display:none;
-    margin-top: auto;
+    margin-top:32px;
     border: 1px solid rgb(255, 255, 255);
     background-color: rgb(37, 115, 153);
     color: wheat;
@@ -687,6 +693,8 @@ margin-right: 6px;
     padding: 0;
     border-top: 0;
     position: absolute;
+    margin-bottom: 25px;
+    
 }
 .buscar--form{
     margin-right: 20px;
@@ -701,7 +709,16 @@ margin-right: 6px;
     animation: apareceropacity 1.8s forwards;
 }
 
-
+.navpc__contenedor--lista li:hover  .buscar__ul{
+    display: flex;
+    animation: apareceropacity 1.8s forwards;
+    top:auto;
+}
+.nav85__contenedor--ul li:hover  .buscar__ul{
+    display: flex;
+    animation: apareceropacity 1.8s forwards;
+    top:auto;
+}
 
 
 
