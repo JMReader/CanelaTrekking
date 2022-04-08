@@ -121,8 +121,8 @@
                   <ul class="buscar__ul" >
 
                      <li class="buscar__ul--li">Dificultad <ul class="ul--opc">
-                          <li><a href="" class="navpc__point">Baja</a></li>
-                          <li><a href="" class="navpc__point">Media</a></li>
+                          <li><a th:href="@{/dif/baja}" href="" class="navpc__point">Baja</a></li>
+                          <li><a href="/dif/media" class="navpc__point">Media</a></li>
                           <li><a href="" class="navpc__point">Alta</a></li>
                           </ul>
                     </li>
@@ -149,7 +149,7 @@
                           
                        <li class="buscar__ul--li">Nombre
                           <form class="ul--opc buscar--form" action="">
-                          <input th:field="${buscarPalabra}" class="" type="text" placeholder="Nombre a buscar">
+                          <input  class="" type="text" placeholder="Nombre a buscar">
                           <input class="buscar__boton" type="submit" value="buscar">
                        </form>
         
