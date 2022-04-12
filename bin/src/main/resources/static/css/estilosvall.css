@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(90, 74, 20);
+}
+.bodytodos{
+    background-image: url(https://leerdelviaje.com/wp-content/uploads/2017/06/20200922_162852-scaled.jpg);
+    background-size: cover;
+  background-attachment: fixed;
+}
+.navpc{
+    background-color: rgb(143 114 44);
+}
+.nav85{
+    background-color: rgb(143 114 44);
+}
+
+.titulos__h1{
+    color: #077200;
+}
+.titulos__h2{
+    color: rgb(99 189 0);
+}
+
+.carta {
+    background-color: rgba(169, 139, 47, 0.8);
+}
+.foot{
+    background-color: rgb(143, 114, 44, .8);
+}
+.carta:hover{
+    box-shadow: 12px 8px 1px rgba(71, 150, 63, .95);
+    transition: all .7s;
+    }

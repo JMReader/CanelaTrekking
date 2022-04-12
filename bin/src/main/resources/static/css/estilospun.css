@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(90, 74, 20);
+}
+.bodytodos{
+    background-image: url(https://t1.ev.ltmcdn.com/es/posts/5/8/7/puna_que_es_caracteristicas_flora_y_fauna_2785_orig.jpg);
+    background-size: cover;
+  background-attachment: fixed;
+}
+.navpc{
+    background-color: rgb(181 166 129);
+}
+.nav85{
+    background-color: rgb(181 166 129);
+}
+
+.titulos__h1{
+    color: #ffffff;
+}
+.titulos__h2{
+    color: rgb(44 44 44);
+}
+
+.carta {
+    background-color: rgba(223, 202, 164, 0.8);
+}
+
+.foot{
+    background-color: rgb(181, 166, 129, .8);
+}
+.carta:hover{
+    box-shadow: 12px 8px 1px rgba(213, 165, 76, .95);
+    transition: all .7s;
+    }
