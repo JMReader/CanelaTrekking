@@ -9,13 +9,6 @@
     <link rel="stylesheet" type="text/css" th:href="@{/webj/bootstrap-5.1.3-dist/bootstrap-5.1.3-dist/css/bootstrap.min.css}"> 
     <link rel="stylesheet" type="text/css" th:href="@{/webj/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.css}"> 
 	<link th:rel="stylesheet" type="text/css" th:href="@{/css/estilosk.css}"/>
-	<link th:if="${pag == 'pun'}" th:rel="stylesheet" type="text/css" th:href="@{/css/estilospun.css}" />
-	<link th:if="${pag == 'queb'}" th:rel="stylesheet" type="text/css" th:href="@{/css/estilosqueb.css}" />
-	<link th:if="${pag == 'yung'}" th:rel="stylesheet" type="text/css" th:href="@{/css/estilosyun.css}" />
-	<link th:if="${pag == 'val'}" th:rel="stylesheet" type="text/css" th:href="@{/css/estilosvall.css}" />
-
-
-
 
 	<script th:src="@{/webj/jquery-3.6.0.min.js}" type="text/javascript"></script>
 <script th:src="@{/webj/popper.min.js}" type="text/javascript"></script>
@@ -81,7 +74,79 @@
 
 		
 
-
+	<!--Puna-->
+	    <style   th:inline="css"  th:if="${pag == 'pun'}">
+      :root{
+    	--color-hov-carta: rgba(213, 165, 76, .95);
+    	--color-back: rgb(90, 74, 20);
+    	--color-main: rgb(181 166 129);
+    	--color-carta: rgba(223, 202, 164, 0.8);
+    	--color-titulo: #ffffff;
+    	--color-subtitulo:rgb(44 44 44);
+    	--color-foot: rgb(181, 166, 129, .8);
+    	--color-contactenos: rgba(197, 166, 87, 0.8);
+    	--fondo-foto:  url(https://t1.ev.ltmcdn.com/es/posts/5/8/7/puna_que_es_caracteristicas_flora_y_fauna_2785_orig.jpg);
+	}     
+	.bodytodos{
+      background-size: cover;
+      background-attachment: fixed;
+    }  
+   </style>
+	<!--Valle-->
+	<style   th:inline="css"  th:if="${pag == 'val'}">
+      :root{
+    	--color-hov-carta: rgba(213, 165, 76, .95);
+    	--color-back: rgb(90, 74, 20);
+    	--color-main: rgb(181 166 129);
+    	--color-carta: rgba(223, 202, 164, 0.8);
+    	--color-titulo: #ffffff;
+    	--color-subtitulo:rgb(44 44 44);
+    	--color-foot: rgb(181, 166, 129, .8);
+    	--color-contactenos: rgba(197, 166, 87, 0.8);
+    	--fondo-foto:  url(https://t1.ev.ltmcdn.com/es/posts/5/8/7/puna_que_es_caracteristicas_flora_y_fauna_2785_orig.jpg);
+	}     
+	.bodytodos{
+      background-size: cover;
+      background-attachment: fixed;
+    }
+   </style>
+	>
+	<!--quebrada -->
+		<style   th:inline="css"  th:if="${pag == 'queb'}">
+		:root{
+    		--color-hov-carta: rgba(218, 83, 30, 0.95);
+    		--color-back: rgb(90, 74, 20);
+    		--color-main: rgb(191 124 54);
+    		--color-carta: rgba(229, 146, 113, 0.8);
+    		--color-titulo: #b9d7ff;
+    		--color-subtitulo:rgb(249 78 40);
+    		--color-foot: rgb(191, 124, 54, .8);
+   			--color-contactenos: rgba(200, 127, 48, 0.8);
+   			--fondo-foto: url(https://www.norte.com/img/2018/09/purmamarca.jpg);
+			}  
+	.bodytodos{
+      background-size: cover;
+      background-attachment: fixed;
+    }
+   </style>
+	<!--yungas -->	
+		<style   th:inline="css"  th:if="${pag == 'yung'}">
+		:root{
+    --color-hov-carta: rgba(90, 250, 82, 0.95);
+    --color-back: olive;
+    --color-main: rgb(43, 153, 37);
+    --color-carta: rgba(191, 252, 188, 0.8);
+    --color-titulo: #edba2d;
+    --color-subtitulo:rgb(128, 240, 137);
+    --color-foot: rgba(43, 153, 37, .8);
+    --color-contactenos: rgba(46, 188, 39, 0.8);
+    --fondo-foto:  url(https://cdn.agroempresario.com/images/posts/e01609cbea4d79d78388fb811fbef50068f23577103c9af6_840.jpg);
+			}  
+	.bodytodos{
+      background-size: cover;
+      background-attachment: fixed;
+    }
+   </style>
 </body>
 
 </html>
