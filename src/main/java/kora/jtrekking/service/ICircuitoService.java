@@ -14,5 +14,5 @@ public interface ICircuitoService {
 	public void eliminarCircuito(Integer circuitoId) throws Exception;
 	public void cambiarCircuito(Circuito cViejo, Circuito cNuevo) throws Exception;
 	public ArrayList<Circuito> obtenerTodosCircuito();
-	public ArrayList<Circuito> obtenerRecomendaciones();
+	public ArrayList<Circuito> obtenerRecomendaciones(int id);
 }

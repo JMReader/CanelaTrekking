@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<header th:fragment="header">
+    <nav class="nav85">
+      <img class="nav85__imna" src="img/navultimo.png" >
+      <div class="nav85__contenedor">
+        <ul class="nav85__contenedor--ul">
+          <li><a class="navpc__point" href="/quienesSomos"><i class="fas fa-walking"></i> <div class="li__letras">¿Quienes somos?</div></a></li>
+          <li><a class="navpc__point" href=""><i class="fas fa-map-marked-alt"></i> <div class="li__letras">¿Donde estamos ?</div></a></li>
+          <li><a class="navpc__point" href="#"><i class="fas fa-phone"></i> <div class="li__letras">Contactenos</div></a>
+            <div class="contactenos">
+                  
+
+            <div class="wrapper">
+               <div class="icon facebook">
+                 
+                 <span><i class="fab fa-facebook-f"></i></span>
+                 <div class="icon__let">Facebook</div>
+               </div>
+               <div class="icon twitter">
+                 
+                 <span><i class="fab fa-whatsapp"></i></span>
+                 <div class="icon__let">Whatsapp</div>
+               </div>
+               <div class="icon instagram">
+                 
+                 <span><i class="fab fa-instagram"></i></span>
+                 <div class="icon__let">Instagram</div>
+               </div>
+               <div class="icon drive">
+                 
+                  <i class="fab fa-google-drive"></i>
+                  <div class="icon__let dr"> Fotos </div>
+                </div>
+
+             </div></li>
+          <li th:if="${pag == 'QS'}"><a class="navpc__point"href="index.html"><i class="fas fa-home buscadorResponsive"></i></a></li>
+        </ul>   
+        
+          
+         
+        </div>
+        <div class="nav85__buscador">
+        
+          <!--Home-->
+          <a th:if="${pag == 'home'}"  class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'home'}" class="nav85__point" href="/home">Todos</a>
+          <a th:if="${pag == 'home'}" class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        
+        
+         <!--puna-->
+          <a th:if="${pag == 'pun'}" class="buscador--flecha" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'pun'}" class="nav85__point" href="/puna">Puna</a>
+          <a th:if="${pag == 'pun'}" class="buscador--flecha" href="/valle" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        
+        
+           <!--Quebrada-->
+          <a th:if="${pag == 'queb'}" class="buscador--flecha" href="/yungas"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'queb'}" class="nav85__point" href="/quebrada">quebrada</a>
+          <a th:if="${pag == 'queb'}" class="buscador--flecha" href="/puna" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        
+        
+           <!--Yunga-->
+          <a th:if="${pag == 'yung'}" class="buscador--flecha" href="/home"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'yung'}" class="nav85__point" href="/yungas">Yungas</a>
+          <a th:if="${pag == 'yung'}" class="buscador--flecha" href="/quebrada" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        
+        
+		
+           <!--valle-->
+          <a th:if="${pag == 'val'}" class="buscador--flecha" href="/puna"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'val'}" class="nav85__point" href="/valle">Valle</a>
+          <a th:if="${pag == 'val'}" class="buscador--flecha" href="/home" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        
+        
+        
+           <!--Quienes Somos-->
+          
+          <a th:if="${pag == 'QS'}" class="nav85__point" href="/home"><i class="fas fa-home "></i></a>
+ 
+        
+ 
+      </div>
+    </nav>
+    </nav>
+      <nav class="navpc">
+        <img class="navpc__imna" src="/img/navultimo.png" >
+        <div class="navpc__contenedor">
+          <ul class="navpc__contenedor--lista">
+            <li><a class="navpc__point" href="/quienesSomos"><i class="fas fa-walking"></i>¿Quienes somos?</a></li>
+            <li><a class="navpc__point" href=""><i class="fas fa-map-marked-alt"></i>¿Donde estamos ?</a></li>
+            <li><a class="navpc__point" href="#"><i class="fas fa-phone"></i>Contactenos</a> <div class="contactenos">
+                  
+
+              <div class="wrapper">
+                 <div class="icon facebook">
+                   
+                   <span><i class="fab fa-facebook-f"></i></span>
+                   <div class="icon__let">Facebook</div>
+                 </div>
+                 <div class="icon twitter">
+                   
+                   <span><i class="fab fa-whatsapp"></i></span>
+                   <div class="icon__let">Whatsapp</div>
+                 </div>
+                 <div class="icon instagram">
+                   
+                   <span><i class="fab fa-instagram"></i></span>
+                   <div class="icon__let">Instagram</div>
+                 </div>
+                 <div class="icon drive">
+                   
+                    <i class="fab fa-google-drive"></i>
+                    <div class="icon__let dr"> Fotos </div>
+                  </div>
+
+               </div>  </li>
+                 <li><a class="navpc__point" href="#"><i class="fas fa-angle-down"></i> <div class="li__letras">buscar</div></a>
+                  <ul class="buscar__ul" >
+
+                     <li class="buscar__ul--li">Dificultad <ul class="ul--opc">
+                          <li><a th:href="@{/dif/baja}" href="" class="navpc__point">Baja</a></li>
+                          <li><a href="/dif/media" class="navpc__point">Media</a></li>
+                          <li><a href="" class="navpc__point">Alta</a></li>
+                          </ul>
+                    </li>
+                    <li class="buscar__ul--li">Distancia <ul class="ul--opc">
+                             <li><a href="" class="navpc__point">menor a 6 km</a></li>
+                             <li><a href="" class="navpc__point">entre 6 y 12 km</a></li>
+                             <li><a href="" class="navpc__point">entre 12 y 20 km</a></li>
+                             <li><a href="" class="navpc__point">mayor a 20km</a></li>
+                          </ul>
+                    </li>
+                    <li class="buscar__ul--li">Duracion <ul class="ul--opc">
+                             <li><a href="" class="navpc__point" >Menos de 4 hs</a></li>
+                             <li><a href="" class="navpc__point">Entre 4 y 8 horas</a></li>
+                             <li><a href="" class="navpc__point">Más de 8 horas</a></li>
+                             <li><a href="" class="navpc__point">Más de un día (Travesias)</a></li>
+                          </ul>
+                    </li>
+                    
+                    <li class="buscar__ul--li"> Operable <ul class="ul--opc ">
+                          <li><a href="" class="navpc__point">De abril a noviembre</a></li>
+                          <li><a href="" class="navpc__point">Todo el año</a></li>
+                       </ul>
+                    </li>
+                          
+                       <li class="buscar__ul--li">Nombre
+                          <form class="ul--opc buscar--form" action="">
+                          <input  class="" type="text" placeholder="Nombre a buscar">
+                          <input class="buscar__boton" type="submit" value="buscar">
+                       </form>
+        
+                       </li>
+        
+                       </ul>
+               
+               
+               
+               
+               
+               
+               
+               </li>
+          </ul>
+          
+        </div>
+        
+        
+        <div th:switch="${pag}" class="navpc__buscador" >
+       
+        <div th:case="home"  >
+          <a class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/home">Todos</a>
+          <a class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="pun"  >
+          <a class="buscador--flecha" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/puna">Puna</a>
+          <a class="buscador--flecha" href="/valle" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+   		<div th:case="queb" >
+          <a class="buscador--flecha" href="/yungas"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/quebrada">quebrada</a>
+          <a class="buscador--flecha" href="/puna" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="yung"  >
+          <a class="buscador--flecha" href="/home"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/yungas">Yungas</a>
+          <a class="buscador--flecha" href="/quebrada" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+		<div th:case="val"  >
+          <a class="buscador--flecha" href="/puna"><i class="fas fa-arrow-left"></i></a>    
+          <a class="nav85__point" href="/valle">Valle</a>
+          <a class="buscador--flecha" href="/home" title="Yungas"><i class="fas fa-arrow-right"></i></a>
+        </div>
+        
+        <div th:case="QS" >
+       
+         <a class="navpc__point" href="/home"><i class="fas fa-home Ihome"></i></a>
+ 
+        </div>
+      
+      </div>
+   
+      
+      
+      </nav>
+    </header>
+
+
+</html>
