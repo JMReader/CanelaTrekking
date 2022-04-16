@@ -24,6 +24,11 @@ public class HomeController {
 	@Autowired
 	@Qualifier("implementacionCircuito")
 	ICircuitoService circuitoSer;
+	@GetMapping({"/"})
+	public String cargarslatch(Model model){
+		//si entra al slatch es lo mismo que el hme por lo cual lo redireccionamos a esa pagina
+		return "redirect:/index";
+	}
 	@GetMapping({"/home"})
 	public String cargarhome(Model model){
 		//mandamos un atributo al modelo de pagina que nos servira para mostrar el header de dsitintas maneras dependiendo el tipo de pagina que estemos consultando.

@@ -71,7 +71,7 @@ public class Circuitocontroller {
 		
 		
 		
-		return ("redirect:/admin/cargar/circuito");
+		return ("redirect:/cargar/circuito");
 	}
 	
 	

@@ -13,7 +13,7 @@ body{
   background-attachment: fixed;
 }
 :root{
-    --color-hov-carta: rgba(120, 134, 169, 0.95);
+    --color-hovcarta: rgba(120, 134, 169, 0.95);
     --color-back: rgb(179, 216, 255);
     --color-main: rgb(37, 115, 153);
     --color-carta: rgba(209, 229, 248, 0.8);
@@ -136,7 +136,8 @@ body{
 }
 
 .carta:hover{
-box-shadow: 12px 8px 1px rgba(120, 134, 169, 0.95);
+box-shadow: 12px 8px 1px var(--color-hovcarta);
+
 transition: box-shadow .7s;
 }
 
