@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import kora.jtrekking.model.Usuario;
 import kora.jtrekking.repoDAO.ICircuitoRepoDAO;
 import kora.jtrekking.service.ICircuitoService;
 import kora.jtrekking.serviceImp.UsuarioServiceMySQL;
@@ -123,20 +122,20 @@ public class HomeController {
 	
 	/*filter by time*/
 	
-	@GetMapping({"/circ/dura/uno"})
+	@GetMapping({"/dura/uno"})
 	public String cargarDurMenorCuatro(Model model){
 		model.addAttribute("circuitos", circuitoRepo.circuitosDurCuatro());
 		model.addAttribute("titulo", "Circuitos de menos de 4 horas");
 		return "index";
 	}
 	
-	@GetMapping({"/circ/dura/dos"})
+	@GetMapping({"/dura/dos"})
 	public String cargarDurMenorOcho(Model model){
 		model.addAttribute("circuitos", circuitoRepo.circuitosDurOcho());
 		model.addAttribute("titulo", "Circuitos de menos de 8 horas");
 		return "index";
 	}
-	@GetMapping({"/circ/dura/tres"})
+	@GetMapping({"/dura/tres"})
 	public String cargarDurMayorOcho(Model model){
 		model.addAttribute("circuitos", circuitoRepo.circuitosDurMasOcho());
 		model.addAttribute("titulo", "Circuitos de más de 8 horas");
@@ -144,7 +143,7 @@ public class HomeController {
 	}
 	
 	
-	@GetMapping({"/circ/travesias"})
+	@GetMapping({"/travesias"})
 	public String cargarTravesias(Model model){
 		model.addAttribute("circuitos", circuitoRepo.circuitosTravesias());
 		model.addAttribute("titulo", "Travesias (Circuitos de más de un día)");

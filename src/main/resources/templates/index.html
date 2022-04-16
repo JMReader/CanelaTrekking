@@ -15,55 +15,6 @@
 </head>
 
 <body class="bodytodos">
-<div th:insert="layouts/header :: header" ></div>
-	<main>
-		<div class="titulos">
-			<h1 class="titulos__h1">Canela Trekking Jujuy</h1>
-			<h2 class="titulos__h2" th:text="${titulo}"> </h2>
-		</div>
-
-
-		<!--Todos los circuitos-->
-		<a th:each="circ: ${circuitos}" th:href="@{'/circuito/'+${circ.id}}" class="a_carta" >
-			<div class="carta ">
-	  
-				<!--caarrousel hecho con boostrap-->
-			  <div id="carouselExampleControls" class="carousel slide carta__img" data-bs-ride="carousel">
-				<div class="carousel-innercarta__img">
-				  <div class="carousel-item active caruseldiv ">
-					<img th:src="*{'data:;base64,'+circ.imagen}" class=" carta__img" alt="...">
-				  </div>
-				  <div class="carousel-item caruseldiv ">
-					<img th:src="*{'data:;base64,'+circ.imagen1}" class=" carta__img" alt="...">
-				  </div>
-				  <div class="carousel-item caruseldiv ">
-					<img th:src="*{'data:;base64,'+circ.imagen2}" class="carta__img " alt="...">
-				  </div>
-				</div>
-	
-			  </div>
-			<!--caarrousel hecho con boostrap-->
-			  
-			  
-			  
-			  
-				<h4 class="carta__titulo" th:text="${circ.nombre}"></h4>
-				 <p class="carta__p" th:text="${circ.vistaprev}">
-				 </p>
-				 <div class="carta__espe">
-					<div class="carta__espe-i"><i class="fas fa-battery-empty">Dificultad: </i><p th:text="${circ.dificultad}"> </p></div>
-					<div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down">Desnivel: </i><p th:text="${circ.desnivel}"> </p></div>
-					<div class="carta__espe-i"><i class="fas fa-clock">Duracion: </i><p th:text="${circ.duracion}+' Hs'"></p><p></p></div>
-					<div class="carta__espe-i"><i class="fas fa-hiking">Distancia: </i><p th:text="${circ.Distancia}+' Km'"></p></div>
-				 </div>
-			
-			
-			 </div>
-		</a>
-	</main>
-
-
-		
 
 	<!--Puna-->
 	    <style   th:inline="css"  th:if="${pag == 'pun'}">
@@ -137,6 +88,53 @@
       background-attachment: fixed;
     }
    </style>
+<div th:insert="layouts/header :: header" ></div>
+	<main>
+		<div class="titulos">
+			<h1 class="titulos__h1">Canela Trekking Jujuy</h1>
+			<h2 class="titulos__h2" th:text="${titulo}"> </h2>
+		</div>
+
+
+		<!--Todos los circuitos-->
+		<a th:each="circ: ${circuitos}" th:href="@{'/circuito/'+${circ.id}}" class="a_carta" >
+			<div class="carta ">
+	  
+				<!--caarrousel hecho con boostrap-->
+			  <div id="carouselExampleControls" class="carousel slide carta__img" data-bs-ride="carousel">
+				<div class="carousel-innercarta__img">
+				  <div class="carousel-item active caruseldiv ">
+					<img th:src="*{'data:;base64,'+circ.imagen}" class=" carta__img" alt="...">
+				  </div>
+				  <div class="carousel-item caruseldiv ">
+					<img th:src="*{'data:;base64,'+circ.imagen1}" class=" carta__img" alt="...">
+				  </div>
+				  <div class="carousel-item caruseldiv ">
+					<img th:src="*{'data:;base64,'+circ.imagen2}" class="carta__img " alt="...">
+				  </div>
+				</div>
+	
+			  </div>
+			<!--caarrousel hecho con boostrap-->
+			  
+			  
+			  
+			  
+				<h4 class="carta__titulo" th:text="${circ.nombre}"></h4>
+				 <p class="carta__p" th:text="${circ.vistaprev}">
+				 </p>
+				 <div class="carta__espe">
+					<div class="carta__espe-i"><i class="fas fa-battery-empty">Dificultad: </i><p th:text="${circ.dificultad}"> </p></div>
+					<div class="carta__espe-i"><i class="fas fa-arrow-alt-circle-down">Desnivel: </i><p th:text="${circ.desnivel}"> </p></div>
+					<div class="carta__espe-i"><i class="fas fa-clock">Duracion: </i><p th:text="${circ.duracion}+' Hs'"></p><p></p></div>
+					<div class="carta__espe-i"><i class="fas fa-hiking">Distancia: </i><p th:text="${circ.Distancia}+' Km'"></p></div>
+				 </div>
+			
+			
+			 </div>
+		</a>
+	</main>
+
 </body>
 
 </html>
