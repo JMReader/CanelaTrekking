@@ -56,6 +56,7 @@ public class Circuito {
 	private String imagen2;
 	
 	
+	
 	//constructores
 	public Circuito() {
 		// TODO Auto-generated constructor stub

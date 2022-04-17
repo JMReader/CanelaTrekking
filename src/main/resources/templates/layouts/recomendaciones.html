@@ -1,15 +1,100 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <div th:fragment="recom" class="option active" style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
-       <div class="shadow"></div>
-       <div class="label">
-          <div class="icon">
-             <i class="fas fa-walking"></i>
-          </div>
-          <div class="info">
-             <div class="main">Blonkisoaz</div>
-             <div class="sub">Omuke trughte a otufta</div>
-          </div>
-       </div>
-    </div>
+    <div class="recomendaciones" th:fragment="recomendaciones">
+
+      <!-- partial:index.partial.html -->
+      <div class="options" >
+         <div class="option active" >
+            <div class="shadow"></div>
+            <div class="label">
+               <div class="icon">
+                  <i class="fas fa-walking"></i>
+               </div>
+               <div class="info">
+                  <div class="main" th:text="${recom[0].nombre}"></div>
+                  <div class="sub" th:text="${recom[0].region}"></div>
+               </div>
+            </div>
+                        <style th:inline="css">
+               .option:nth-child(1) {
+                  --optionBackground:url("data:image/jpg;base64, [[${recom[0].imagen}]]");
+               }
+             </style>
+         </div>
+        <div class="option" >
+            <div class="shadow"></div>
+            <div class="label">
+               <div class="icon">
+                  <i class="fas fa-walking"></i>
+               </div>
+               <div class="info">
+                  <div class="main" th:text="${recom[1].nombre}"></div>
+                  <div class="sub" th:text="${recom[1].region}"></div>
+               </div>
+            </div>
+                        <style th:inline="css">
+               .option:nth-child(2) {
+                  --optionBackground:url("data:image/jpg;base64, [[${recom[1].imagen}]]");
+               }
+             </style>
+         </div>
+         
+                  <div class="option " >
+            <div class="shadow"></div>
+            <div class="label">
+               <div class="icon">
+                  <i class="fas fa-walking"></i>
+               </div>
+               <div class="info">
+                  <div class="main" th:text="${recom[2].nombre}"></div>
+                  <div class="sub" th:text="${recom[2].region}"></div>
+               </div>
+            </div>
+                        <style th:inline="css">
+               .option:nth-child(3) {
+                  --optionBackground:url("data:image/jpg;base64, [[${recom[2].imagen}]]");
+               }
+             </style>
+         </div>
+                           <div class="option " >
+            <div class="shadow"></div>
+            <div class="label">
+               <div class="icon">
+                  <i class="fas fa-walking"></i>
+               </div>
+               <div class="info">
+                  <div class="main" th:text="${recom[3].nombre}"></div>
+                  <div class="sub" th:text="${recom[3].region}"></div>
+               </div>
+            </div>
+                        <style th:inline="css">
+               .option:nth-child(4) {
+                  --optionBackground:url("data:image/jpg;base64, [[${recom[3].imagen}]]");
+               }
+             </style>
+         </div>
+                        
+                           <div class="option" >
+            <div class="shadow"></div>
+            <div class="label">
+               <div class="icon">
+                  <i class="fas fa-walking"></i>
+               </div>
+               <div class="info">
+                  <div class="main" th:text="${recom[4].nombre}"></div>
+                  <div class="sub" th:text="${recom[4].region}"></div>
+               </div>
+            </div>
+                        <style th:inline="css">
+               .option:nth-child(5) {
+                  --optionBackground:url("data:image/jpg;base64, [[${recom[4].imagen}]]");
+               }
+             </style>
+         </div>
+         
+         
+         
+         
+         
+         </div>
 </html>

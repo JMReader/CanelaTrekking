@@ -94,109 +94,21 @@
 
 
     <h4 class="titulos__recomendacion" >Otros Circuitos :</h4>
-    <div class="recomendaciones">
 
-      <!-- partial:index.partial.html -->
-      <div class="options">
-         <div class="option active" >
-            <style th:inline="css">
-               :root {
-                  --optionBackground:url("data:image/jpg;base64, [[${circ.imagen}]]");
-                  
-               }
-             </style>
-            <div class="shadow"></div>
-            <div class="label">
-               <div class="icon">
-                  <i class="fas fa-walking"></i>
-               </div>
-               <div class="info">
-                  <div class="main">Blonkisoaz</div>
-                  <div class="sub">Omuke trughte a otufta</div>
-               </div>
-            </div>
-         </div>
-         <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-               <div class="icon">
-                  <i class="fas fa-snowflake"></i>
-               </div>
-               <div class="info">
-                  <div class="main">Oretemauw</div>
-                  <div class="sub">Omuke trughte a otufta</div>
-               </div>
-            </div>
-         </div>
-         <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-               <div class="icon">
-                  <i class="fas fa-tree"></i>
-               </div>
-               <div class="info">
-                  <div class="main">Iteresuselle</div>
-                  <div class="sub">Omuke trughte a otufta</div>
-               </div>
-            </div>
-         </div>
-         <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-               <div class="icon">
-                  <i class="fas fa-tint"></i>
-               </div>
-               <div class="info">
-                  <div class="main">Idiefe</div>
-                  <div class="sub">Omuke trughte a otufta</div>
-               </div>
-            </div>
-         </div>
-         <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-               <div class="icon">
-                  <i class="fas fa-sun"></i>
-               </div>
-               <div class="info">
-                  <div class="main">Inatethi</div>
-                  <div class="sub">Omuke trughte a otufta</div>
-               </div>
-            </div>
-         </div>
-         <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/f19901f50b79604839ca761cd6d74748/tumblr_o65rohhkQL1qho82wo1_1280.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-               <div class="icon">
-                  <i class="fas fa-sun"></i>
-               </div>
-               <div class="info">
-                  <div class="main">Inatethi</div>
-                  <div class="sub">Omuke trughte a otufta</div>
-               </div>
-            </div>
-         </div>
-      
-      </div>
-    </div>
-  
+  <div th:insert="layouts/recomendaciones :: recomendaciones"></div>
 
  
 
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+
+
+
+<div th:insert="layouts/footer :: footer"></div>
+    
+    
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
       <script th:src="@{/webj/script.js}" type="text/javascript"></script>
 
-
-
-
-      <footer class="foot">
-         
-
-        <a href="" class="foot__a"><i class="fab fa-instagram fa-2x"></i></a>
-        <a href="" class="foot__a"><i class="fab fa-facebook-f fa-2x"></i></a>
-        <a href="" class="foot__a"><i class="fab fa-whatsapp fa-2x"></i></a>
-        <div class="foot__leg">Por Jose Luis Coro prestador de turismo activo Jujeño</div>
-    </footer>
 </body>
 
 

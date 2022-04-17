@@ -87,23 +87,26 @@ public class CircuitoServiceMySQL implements ICircuitoService{
 	@Override
 	public ArrayList<kora.jtrekking.model.Circuito> obtenerRecomendaciones(int id) {
 		// TODO Auto-generated method stub
-		ArrayList<Circuito> recomendaciones, aux;
-		int k;
-		aux= (ArrayList<Circuito>) Repo.otrosCircuitos();
-		for(k=0;k<aux.size();k++) {
-				if(id== aux.get(k).getId()) {
-					int random;
-					do {
-						random = (int)(Math.random()*aux.size());
-					}while(random != k);
-					aux.remove(k);
-					aux.add(Repo.findByid(random).orElseThrow(null));
-				};
+		//(int)(Math.random()*aux.size());
+		
+		ArrayList<Circuito> aux;
+		aux= (ArrayList<Circuito>)Repo.otrosCircuitos();
+		
+		for(int i=0;i<aux.size();i++) {
+			if(aux.get(i).getId()==id) {
 				
-			
+				aux.remove(i);
+			}
 		}
-			recomendaciones=aux;
-		return recomendaciones;
+		
+		return aux;
 	}
-
 }
+
+
+
+
+
+
+
+
