@@ -6,7 +6,6 @@
   --user-button-text:#323133;
   --user-button-shadow:rgba(0,0,0,0.1);
 }
-
 .recomendaciones #user-button {
   z-index: 1000;
   bottom: 1rem !important;
