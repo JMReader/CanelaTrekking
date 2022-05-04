@@ -11,53 +11,35 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import kora.jtrekking.serviceImp.LoginUsuarioServiceImp;
 
-
-
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private LoginUsuarioServiceImp userDetailsService;
 
-	
- BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder() ;	
-	
+    BCryptPasswordEncoder bcrypt = new BCryptPasswordEncoder();
+
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         return bCryptPasswordEncoder;
     }
-    
-	@Override
+
+    @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		
-    	auth.userDetailsService(userDetailsService).passwordEncoder(bcrypt);
+
+        auth.userDetailsService(userDetailsService).passwordEncoder(bcrypt);
     }
- 
-	
-	@Override
-	 protected void configure(HttpSecurity http) throws Exception {
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-        .antMatchers("/cargar/circuito").authenticated()
-    .anyRequest() .permitAll()
-    .and()
-        .formLogin();
-		}
-    
-
-
-
-
-
-    
-    
-    
-    
-
-	 
-
-
-	 
+                .antMatchers("/cargar/circuito").authenticated()
+                .antMatchers("/editar/circuito/{id}").authenticated()
+                .anyRequest().permitAll()
+                .and()
+                .formLogin();
+    }
 
 }

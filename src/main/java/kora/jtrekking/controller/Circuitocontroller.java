@@ -30,51 +30,50 @@ public class Circuitocontroller {
 
 	@Autowired
 	CircuitoServiceMySQL repo;
-	
-	
-	
+
 	@GetMapping("/circuito/{id}")
-	public String verCirc(Model model, @PathVariable(name="id")Integer id) {
-		Circuito circuitoEncontrado= repo.obtenerCircuitoid(id);
+	public String verCirc(Model model, @PathVariable(name = "id") Integer id) {
+		Circuito circuitoEncontrado = repo.obtenerCircuitoid(id);
 		model.addAttribute("circ", circuitoEncontrado);
-		model.addAttribute("pag", "QS");	
-		model.addAttribute("recom", repo.obtenerRecomendaciones(id));	
-		return("circuito");
+		model.addAttribute("pag", "QS");
+		model.addAttribute("recom", repo.obtenerRecomendaciones(id));
+		return ("circuito");
 	}
-	
-	
-	
-	
-	
+
 	@GetMapping("cargar/circuito")
 	public String crearCirc(Model model) {
 		LOGGER.info("METHOD: ingresando el metodo cargar");
 		model.addAttribute("circuito", new Circuito());
 		return ("cargar");
 	}
-	@PostMapping(value="/circuito/guardar", consumes = "multipart/form-data")
-	public String guardarCirc(@RequestParam("file") MultipartFile file, @RequestParam("file1") MultipartFile file1, @RequestParam("file2")  MultipartFile file2 ,  @Valid @ModelAttribute("circuito") Circuito nuevoCirc, BindingResult resultado ,Model model)  throws IOException{
+
+	@GetMapping("editar/circuito/{id}")
+	public String editarCirc(Model model, @PathVariable(name = "id") Integer id) {
+		LOGGER.info("METHOD: ingresando el metodo cargar");
+		model.addAttribute("editmode", true);
+		model.addAttribute("circuito", repo.obtenerCircuitoid(id));
+		return ("cargar");
+	}
+
+	@PostMapping(value = "/circuito/guardar", consumes = "multipart/form-data")
+	public String guardarCirc(@RequestParam("file") MultipartFile file, @RequestParam("file1") MultipartFile file1,
+			@RequestParam("file2") MultipartFile file2, @Valid @ModelAttribute("circuito") Circuito nuevoCirc,
+			BindingResult resultado, Model model) throws IOException {
 		byte[] content = file.getBytes();
 		String base64 = Base64.getEncoder().encodeToString(content);
 		nuevoCirc.setImagen(base64);
-		
+
 		byte[] content1 = file1.getBytes();
 		String base65 = Base64.getEncoder().encodeToString(content1);
 		nuevoCirc.setImagen1(base65);
-		
+
 		byte[] content2 = file2.getBytes();
 		String base66 = Base64.getEncoder().encodeToString(content2);
 		nuevoCirc.setImagen2(base66);
-		
-		
+
 		repo.guardarCircuito(nuevoCirc);
-		
-		
-		
+
 		return ("redirect:/cargar/circuito");
 	}
-	
-	
-	
-	
+
 }

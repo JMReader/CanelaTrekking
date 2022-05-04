@@ -31,7 +31,6 @@ public class HomeController {
 
 	@GetMapping({ "/home" })
 	public String cargarhome(Model model) {
-		Usuario jose = new Usuario(1, "josecoro", "coro780825");
 
 		// mandamos un atributo al modelo de pagina que nos servira para mostrar el
 		// header de dsitintas maneras dependiendo el tipo de pagina que estemos
