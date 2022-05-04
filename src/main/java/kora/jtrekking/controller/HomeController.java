@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import kora.jtrekking.model.Usuario;
 import kora.jtrekking.repoDAO.ICircuitoRepoDAO;
 import kora.jtrekking.service.ICircuitoService;
 import kora.jtrekking.serviceImp.UsuarioServiceMySQL;
@@ -30,6 +31,7 @@ public class HomeController {
 	}
 	@GetMapping({"/home"})
 	public String cargarhome(Model model){
+		Usuario jose =new Usuario();
 		//mandamos un atributo al modelo de pagina que nos servira para mostrar el header de dsitintas maneras dependiendo el tipo de pagina que estemos consultando.
 		model.addAttribute("pag", "home");
 		model.addAttribute("circuitos", circuitoSer.obtenerTodosCircuito());
