@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="formFlexPadre">
-        <img  class="formFlex__img" src="../img/navultimo.png" >
+        <img th class="formFlex__img" th:src="@{/img/navultimo.png}" src="../img/navultimo.png" >
         <form th:object="${circuito}" th:action=" @{/circuito/guardar}" class="formFlex" method="post" enctype="multipart/form-data">
             <div class="formFlex__div">
                 <input type="hidden" id="identificadorPoi" th:field="*{id}" />
@@ -26,7 +26,7 @@
 
             <div class="formFlex__div">
                 <label class="lab">Region</label>
-                <select th:field="*{region}" class="formFLex__input" placeholder="region">
+                <select th:field="*{region}" class="formFLex__input" placeholder="region" >
                     <option value="puna">puna</option>
                     <option value="valle">valle</option>
                     <option value="quebrada">quebrada</option>
