@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\kora",
+    "\\src\\main\\java\\kora\\jtrekking",
+    "\\src\\main\\java\\kora\\jtrekking\\service",
+    "\\src\\main\\java\\kora\\jtrekking\\serviceImp",
+    "\\src\\main\\resources",
+    "\\src\\main\\resources\\templates"
+  ],
+  "SelectedNode": "\\src\\main\\resources\\templates\\circuito.html",
+  "PreviewInSolutionExplorer": false
+}
