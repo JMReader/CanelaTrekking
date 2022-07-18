@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import kora.jtrekking.model.Usuario;
+
 import kora.jtrekking.repoDAO.ICircuitoRepoDAO;
 import kora.jtrekking.service.ICircuitoService;
 import kora.jtrekking.serviceImp.UsuarioServiceMySQL;
@@ -29,7 +29,7 @@ public class HomeController {
 		return "redirect:/index";
 	}
 
-	@GetMapping({ "/home" })
+	@GetMapping({ "/home", "/index" })
 	public String cargarhome(Model model) {
 
 		// mandamos un atributo al modelo de pagina que nos servira para mostrar el

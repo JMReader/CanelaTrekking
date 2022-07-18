@@ -8,7 +8,6 @@ import javax.validation.Valid;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,16 +59,16 @@ public class Circuitocontroller {
 			@RequestParam("file2") MultipartFile file2, @Valid @ModelAttribute("circuito") Circuito nuevoCirc,
 			BindingResult resultado, Model model) throws IOException {
 		byte[] content = file.getBytes();
-		String base64 = Base64.getEncoder().encodeToString(content);
-		nuevoCirc.setImagen(base64);
+		String img1 = Base64.getEncoder().encodeToString(content);
+		nuevoCirc.setImagen(img1);
 
 		byte[] content1 = file1.getBytes();
-		String base65 = Base64.getEncoder().encodeToString(content1);
-		nuevoCirc.setImagen1(base65);
+		String img2 = Base64.getEncoder().encodeToString(content1);
+		nuevoCirc.setImagen1(img2);
 
 		byte[] content2 = file2.getBytes();
-		String base66 = Base64.getEncoder().encodeToString(content2);
-		nuevoCirc.setImagen2(base66);
+		String img3 = Base64.getEncoder().encodeToString(content2);
+		nuevoCirc.setImagen2(img3);
 
 		repo.guardarCircuito(nuevoCirc);
 
