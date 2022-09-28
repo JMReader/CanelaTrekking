@@ -1,19 +1,23 @@
 package kora.jtrekking.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
+import kora.jtrekking.model.Circuito;
+import kora.jtrekking.model.Usuario;
 import kora.jtrekking.repoDAO.ICircuitoRepoDAO;
 import kora.jtrekking.service.ICircuitoService;
 import kora.jtrekking.serviceImp.UsuarioServiceMySQL;
 
 @Controller
 public class HomeController {
-
+	boolean cache = false;
+	ArrayList<Circuito> todosC = new ArrayList<Circuito>();
 	@Autowired
 	ICircuitoRepoDAO circuitoRepo;
 	@Autowired
@@ -21,6 +25,7 @@ public class HomeController {
 	@Autowired
 	@Qualifier("implementacionCircuito")
 	ICircuitoService circuitoSer;
+
 
 	@GetMapping({ "/" })
 	public String cargarslatch(Model model) {
@@ -31,11 +36,21 @@ public class HomeController {
 
 	@GetMapping({ "/home", "/index" })
 	public String cargarhome(Model model) {
+		//vamos a comprobar si tenemos guardada en el servidor la informacion para mostrarla en la aplicacion, de no ternerla la buscamos
+		//pero si la tenemos la usamos directo de aca 
+		if (cache==false){
+			cache= true;
+			todosC = circuitoSer.ObtenerCircuitos();
+		}
 		// mandamos un atributo al modelo de pagina que nos servira para mostrar el
 		// header de dsitintas maneras dependiendo el tipo de pagina que estemos
 		// consultando.
+
+		//Usuario us = new Usuario(1, "usuario", "coro");
+		//usuarioRepo.guardarUsuario(us);
+		
 		model.addAttribute("pag", "home");
-		model.addAttribute("circuitos", circuitoSer.obtenerTodosCircuito());
+		model.addAttribute("circuitos", todosC);
 		model.addAttribute("titulo", "Todos los circuitos");
 		return "index";
 	}
