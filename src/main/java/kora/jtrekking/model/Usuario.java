@@ -15,6 +15,8 @@ public class Usuario {
 	private String userName;
 	private String clave;
 	private String rol;
+	private String imagen;
+
 	//constructores
 	public Usuario() {
 		// TODO Auto-generated constructor stub
@@ -25,10 +27,17 @@ public class Usuario {
 		this.userName = usuario;
 		this.clave = clave;
 		this.rol ="ADMIN";
+		this.imagen="no";
 		//unico rol de momento.
 	}
 	
 	//gets y sets
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	public Integer getId() {
 		return id;
 	}

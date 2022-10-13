@@ -1,38 +1,63 @@
+
 body{
-    background: linear-gradient(to left, #ffe598eb, rgb(37, 115, 153));
+    background: linear-gradient(to left, #159A9C, #ffffff);
+    display: flex;
+    padding: 0;
+    margin: 6px;
+    height: 100vh;
+    width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 .lab{
     color: aliceblue;
     font-size: medium;
     margin-right: 12px;
 
-
+}
+.form__tit{
+    color: #ffffff;
+}
+.nav-costado{
+width: calc(20% - 12px);
+height: 100%;
+background-color: #B4BEC9;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 .formFlexPadre{
+    flex-wrap: nowrap;
+    width: calc(80% - 12px);
     overflow: auto;
-    flex-wrap: wrap;
-    margin: 50px auto;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
-    background-color: rgb(56, 80, 160);
+    background-color: #002333;
     padding: 12px;
+}
+.formFlex__div{
+    min-width: 150px;
+    margin: 12px;
+    width: 30%;
 }
 .formFLex__input {
     order: 2;
     outline: none;
      margin: 10px 0;
-     width: 300px;
+     width: 90%;
      padding: 12px;
-     background-color: rgb(174, 174, 255);
+     background-color: #DEEFE7;
      border: none;
-     border-left: 4px solid rgb(255, 175, 25);
+     border-left: 4px solid #159A9C;
 }
 .formFLex__input:focus{
-    font-size: 14px;
     color: rgb(255, 255, 255);
-    font-weight: 800;
-    border-left: 6px solid rgb(28, 28, 255);   
-    background-color: rgb(248, 200, 111);
+    font-weight: 600;
+    border-left: 6px solid #183543;   
+    background-color: #159A9C;
     transition: all .6s;
 }
 textarea{
@@ -40,10 +65,12 @@ textarea{
     min-height: 90px;
 }
 .formFlex{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
     order: 2;
     margin: 40px;
     min-width: 400px;
-
     text-align: center;
     margin: auto;
     flex: 1.5;
@@ -64,23 +91,50 @@ textarea{
 .sumb{
     margin-top: 0px;
     margin-bottom: 10px;
-    border-right: 4px solid rgb(255, 175, 25);
+    border-right: 4px solid #159A9C;
 }
 .sumb:focus{
-    font-size: medium;
     outline: none;
-    font-weight: 100;
-    color: black;
+    color: rgb(255, 255, 255);
     margin: 10px 0;
-    width: 300px;
     background-color: rgb(174, 174, 255);
     border: none;
-    border-left: 4px solid rgb(255, 175, 25);
+    border-left: 4px solid #183543;
     margin-top: 0px;
     margin-bottom: 10px;
-    border-right: 4px solid rgb(255, 175, 25);
+    border-right: 4px solid #183543;
 }
+
+/*side nav var*/
+#sn--foto{
+    width: 5rem;
+    border-radius: 50%;
+}
+#sn--user{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+#sn--rol{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+
 @media only screen and (max-width: 460px) {
+
+    body{
+        margin: 0;
+        justify-content: center;
+    }
+    .nav-costado{
+        display: none;
+    }
+
+
+
+
     .formFLex__input {
 
          padding: 4px;
