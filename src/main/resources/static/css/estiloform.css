@@ -1,13 +1,35 @@
 
+    :root{
+        --bs-accordion-active-color: #075354;
+    }
+
+#desplegable{
+    width: 100%;
+}
+.accordion-header button{
+
+    background-color: #159A9C;
+
+
+
+}
+.accordion-body{
+    background-color: #DEEFE7;
+}
 body{
     background: linear-gradient(to left, #159A9C, #ffffff);
     display: flex;
     padding: 0;
     margin: 6px;
     height: 100vh;
+    align-items: center;
     width: 100vw;
+    justify-content: center;
   overflow-y: hidden;
   overflow-x: hidden;
+}
+.accordion{
+    background-color: #002333;
 }
 .lab{
     color: aliceblue;
@@ -20,7 +42,7 @@ body{
 }
 .nav-costado{
 width: calc(20% - 12px);
-height: 100%;
+height: calc(100% - 12px);
 background-color: #B4BEC9;
 display: flex;
 flex-direction: column;
@@ -30,8 +52,9 @@ align-items: center;
 .formFlexPadre{
     flex-wrap: nowrap;
     width: calc(80% - 12px);
+    height: calc(100% - 12px);
+    align-items: center;
     overflow: auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,6 +138,7 @@ textarea{
     font-weight: 600;
     margin-bottom: 4px;
 }
+
 #sn--rol{
     font-size: 1rem;
     font-weight: 400;
