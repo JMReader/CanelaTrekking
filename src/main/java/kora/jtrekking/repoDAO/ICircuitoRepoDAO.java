@@ -15,36 +15,36 @@ import kora.jtrekking.model.Circuito;
 public interface ICircuitoRepoDAO extends CrudRepository <Circuito, Integer>{
 	public Optional<Circuito> findByid(Integer idCircuito);
 	
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where region =  'valle';",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where region =  'valle';",nativeQuery=true)
 	public List<Circuito> mostrarCircuitosValle();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where region =  'puna';",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where region =  'puna';",nativeQuery=true)
 	public List<Circuito> mostrarCircuitosPuna();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where region =  'quebrada';",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where region =  'quebrada';",nativeQuery=true)
 	public List<Circuito> mostrarCircuitosQueb();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where region =  'yungas';",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where region =  'yungas';",nativeQuery=true)
 	public List<Circuito> mostrarCircuitosYung();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos ORDER BY RAND() LIMIT 0,6;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos ORDER BY RAND() LIMIT 0,6;",nativeQuery=true)
 	public List<Circuito> otrosCircuitos();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where dificultad ='baja';",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where dificultad ='baja';",nativeQuery=true)
 	public List<Circuito> circuitosDifBaja();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where dificultad ='media';",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where dificultad ='media';",nativeQuery=true)
 	public List<Circuito> circuitosDifMedia();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where dificultad ='alta';",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where dificultad ='alta';",nativeQuery=true)
 	public List<Circuito> circuitosDifAlta();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where duracion < 4;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where duracion < 4;",nativeQuery=true)
 	public List<Circuito> circuitosDurCuatro();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where duracion > 4 and duracion < 8 ;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where duracion > 4 and duracion < 8 ;",nativeQuery=true)
 	public List<Circuito> circuitosDurOcho();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where duracion > 8 and duracion < 24;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where duracion > 8 and duracion < 24;",nativeQuery=true)
 	public List<Circuito> circuitosDurMasOcho();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where  duracion > 24;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where  duracion > 24;",nativeQuery=true)
 	public List<Circuito> circuitosTravesias();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where  distancia < 6;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where  distancia < 6;",nativeQuery=true)
 	public List<Circuito> circuitosDisSeis();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where  distancia > 6 and distancia < 12;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where  distancia > 6 and distancia < 12;",nativeQuery=true)
 	public List<Circuito> circuitosDisDoce();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where  distancia > 12 and distancia < 20;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where  distancia > 12 and distancia < 20;",nativeQuery=true)
 	public List<Circuito> circuitosDisVeinte();
-	@Query(value = "SELECT * FROM canelatrekking.circuitos where  duracion > 20;",nativeQuery=true)
+	@Query(value = "SELECT * FROM canelat.circuitos where  duracion > 20;",nativeQuery=true)
 	public List<Circuito> circuitosDisMasVeinte();
 }

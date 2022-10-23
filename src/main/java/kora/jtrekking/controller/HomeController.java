@@ -46,8 +46,8 @@ public class HomeController {
 		// header de dsitintas maneras dependiendo el tipo de pagina que estemos
 		// consultando.
 
-		//Usuario us = new Usuario(1, "usuario", "coro");
-		//usuarioRepo.guardarUsuario(us);
+		Usuario us = new Usuario(1, "usuario", "coro");
+		usuarioRepo.guardarUsuario(us);
 		
 		model.addAttribute("pag", "home");
 		model.addAttribute("circuitos", todosC);
