@@ -92,6 +92,11 @@ body{
 .celda p{
     display: inline-block;
     margin: 0;
+    margin-right: 2px;
+}
+.celda i {
+   padding: 0 5px;
+
 }
 .celda:nth-child(7){
     background-color: rgba(7, 94, 84);
@@ -121,18 +126,16 @@ body{
         }
         .carrousel__img{
             overflow: hidden;
-            width: 320px;
-            height: auto;
+           
+            height: 200;
             object-fit: cover;
         }
     }
-    @media screen and (min-width: 100px) AND (max-width: 360px){
+    @media screen and (min-width: 100px) AND (max-width: 600px){
         .recomendaciones{
             margin-left: 1vw;
         }
-        .flexcon{
-                    margin-left: 1vw;
-        }
+       
         .flexcon__imagenes{
 
             width: 156px;
@@ -150,9 +153,7 @@ body{
             padding: 4px;
         }
         .carrousel__img{
-
-            height: auto;
-            width: 180px;
+            height: 160px;
           
         }
         .flexcon__descipcion{
