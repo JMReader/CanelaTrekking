@@ -101,6 +101,21 @@ public class CircuitoServiceMySQL implements ICircuitoService{
 		
 		return aux;
 	}
+
+	@Override
+	public ArrayList<kora.jtrekking.model.Circuito> buscarCircuitos(String busqueda) {
+		// TODO Auto-generated method stub
+		ArrayList<Circuito> aux; 
+		ArrayList<Circuito> finale = new ArrayList<Circuito>(); 
+		aux = (ArrayList<Circuito>)Repo.findAll();
+		
+		for(int i=0;i<aux.size();i++) {
+			if(aux.get(i).getNombre().toLowerCase().contains(busqueda.toLowerCase())) {
+				finale.add(aux.get(i));
+			}
+		}
+		return finale;
+	}
 }
 
 

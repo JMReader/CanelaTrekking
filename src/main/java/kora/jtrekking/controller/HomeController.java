@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kora.jtrekking.model.Circuito;
 import kora.jtrekking.model.Usuario;
@@ -46,8 +48,8 @@ public class HomeController {
 		// header de dsitintas maneras dependiendo el tipo de pagina que estemos
 		// consultando.
 
-		Usuario us = new Usuario(1, "usuario", "coro");
-		usuarioRepo.guardarUsuario(us);
+		//Usuario us = new Usuario(1, "usuario", "coro");
+		//usuarioRepo.guardarUsuario(us);
 		
 		model.addAttribute("pag", "home");
 		model.addAttribute("circuitos", todosC);
@@ -176,5 +178,10 @@ public class HomeController {
 		model.addAttribute("titulo", "Travesias (Circuitos de más de un día)");
 		return "index";
 	}
-
+	@PostMapping(value="/circuito/buscar")
+	public String buscarCircuito(Model model, @RequestParam("busqueda") String nombre){
+		model.addAttribute("circuitos", circuitoSer.buscarCircuitos(nombre));
+		model.addAttribute("titulo", ("Busqueda de '"+ nombre+"'"));
+		return "index";
+	}
 }
