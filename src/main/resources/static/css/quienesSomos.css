@@ -1,0 +1,76 @@
+/*Pagina quienes somos*/
+.containerp {
+    padding: 12px;
+    margin-left: 1vw;
+    width: 97vw;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(252, 252, 252, 0.85);
+    box-shadow: 10px 10px 5px 0px rgba(40, 139, 153, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(40, 139, 153, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(40, 139, 153, 0.75);
+    animation: apareceropacity 1.8s forwards;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+.containerp__quienesomos {
+    display: flex;
+    width: calc(100vw - 22rem);
+    padding-left: 28px;
+
+}
+.containerp__quienesomos {
+    font-size: large;
+    min-width: 290px;
+
+}
+
+/* Media para respnsive en "quienes somos"*/
+@media screen and (max-width: 850px) {
+    .titulosquien {
+        padding: 0.8rem 0;
+        font-size: 3em;
+
+
+    }
+}
+
+@media screen and (min-width: 650px) AND (max-width: 850px) {
+
+    .containerp__quienesomos {
+        font-size: medium;
+    }
+
+
+}
+
+
+
+@media screen and (min-width: 375px) AND (max-width: 425px) {
+    .containerp__quienesomos {
+        display: flex;
+        width: auto;
+        padding-left: 14px;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+}
+@media screen AND (max-width: 375px){
+    
+    .containerp__quienesomos {
+        font-size: 12px;
+        width: 95%;
+    }
+
+
+    .titulosquien {
+        padding: 0.6rem 0;
+        font-size: 2em;
+
+
+    }
+}

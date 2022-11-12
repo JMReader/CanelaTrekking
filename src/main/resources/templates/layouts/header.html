@@ -8,7 +8,6 @@
       <div class="nav85__contenedor">
         <ul class="nav85__contenedor--ul">
           <li><a class="navpc__point" href="/quienesSomos"><i class="fas fa-walking"></i> <div class="li__letras">¿Quienes somos?</div></a></li>
-          <li><a class="navpc__point" href=""><i class="fas fa-map-marked-alt"></i> <div class="li__letras">¿Donde estamos ?</div></a></li>
           <li><a class="navpc__point" href="#"><i class="fas fa-phone"></i> <div class="li__letras">Contactenos</div></a>
             <div class="contactenos">
                   
@@ -36,7 +35,7 @@
                 </div>
 
              </div></li>
-          <li th:if="${pag == 'QS'}"><a class="navpc__point"href="index.html"><i class="fas fa-home buscadorResponsive"></i></a></li>
+          <li th:if="${pag == 'QS'}"><a class="navpc__point"href="/"><i class="fas fa-home buscadorResponsive"></i></a></li>
         </ul>   
         
           
@@ -46,19 +45,19 @@
         
           <!--Home-->
           <a th:if="${pag == 'home'}"  class="buscador--flecha" href="/valle"><i class="fas fa-arrow-left"></i></a>    
-          <a th:if="${pag == 'home'}" class="nav85__point" href="/home">Todos</a>
+          <a th:if="${pag == 'home'}" style="margin: 0 6px ;" class="nav85__point" href="/home">  Todos </a>
           <a th:if="${pag == 'home'}" class="buscador--flecha" href="/yungas" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         
         
          <!--puna-->
-          <a th:if="${pag == 'pun'}" class="buscador--flecha" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
-          <a th:if="${pag == 'pun'}" class="nav85__point" href="/puna">Puna</a>
+          <a th:if="${pag == 'pun'}" class="buscador--flecha" style="margin-left: 2px;" href="/quebrada"><i class="fas fa-arrow-left"></i></a>    
+          <a th:if="${pag == 'pun'}" style="margin: 0 8px ;" class="nav85__point" href="/puna">  Puna  </a>
           <a th:if="${pag == 'pun'}" class="buscador--flecha" href="/valle" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         
         
            <!--Quebrada-->
           <a th:if="${pag == 'queb'}" class="buscador--flecha" href="/yungas"><i class="fas fa-arrow-left"></i></a>    
-          <a th:if="${pag == 'queb'}" class="nav85__point" href="/quebrada">quebrada</a>
+          <a th:if="${pag == 'queb'}" class="nav85__point" href="/quebrada">Quebrada</a>
           <a th:if="${pag == 'queb'}" class="buscador--flecha" href="/puna" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         
         
@@ -71,7 +70,7 @@
 		
            <!--valle-->
           <a th:if="${pag == 'val'}" class="buscador--flecha" href="/puna"><i class="fas fa-arrow-left"></i></a>    
-          <a th:if="${pag == 'val'}" class="nav85__point" href="/valle">Valle</a>
+          <a th:if="${pag == 'val'}" style="margin: 0 12px ;" class="nav85__point" href="/valle">Valle</a>
           <a th:if="${pag == 'val'}" class="buscador--flecha" href="/home" title="Yungas"><i class="fas fa-arrow-right"></i></a>
         
         
@@ -90,7 +89,7 @@
         <div class="navpc__contenedor">
           <ul class="navpc__contenedor--lista">
             <li><a class="navpc__point" href="/quienesSomos"><i class="fas fa-walking"></i>¿Quienes somos?</a></li>
-            <li><a class="navpc__point" href=""><i class="fas fa-map-marked-alt"></i>¿Donde estamos ?</a></li>
+            
             <li><a class="navpc__point" href="#"><i class="fas fa-phone"></i>Contactenos</a> <div class="contactenos">
                   
 

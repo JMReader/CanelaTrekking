@@ -6,6 +6,7 @@ body {
     padding-top: 6rem;
     max-width: 100vw;
     background: rgb(179, 216, 255);
+    background-size: cover;
 }
 
 .bodytodos {
@@ -243,14 +244,7 @@ body {
 
 
 
-/*Pagina quienes somos*/
 
-.containerp__quienesomos {
-    display: flex;
-    width: calc(100vw - 22rem);
-    padding-left: 28px;
-
-}
 
 .containerp__carrousel {
     background-color: azure;
@@ -263,24 +257,9 @@ body {
     object-fit: cover;
 }
 
-.containerp {
-    padding: 12px;
-    margin-left: 1vw;
-    width: 97vw;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgba(252, 252, 252, 0.35);
-    box-shadow: 10px 10px 5px 0px rgba(40, 139, 153, 0.75);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(40, 139, 153, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(40, 139, 153, 0.75);
-    animation: apareceropacity 1.8s forwards;
-}
 
-.containerp__quienesomos {
-    font-size: large;
 
-    font-weight: 700;
-}
+
 
 .imgver {
     height: 24rem;
@@ -344,7 +323,7 @@ parte del responsive */
 
 /* trabajar el nav 85*/
 .nav85 {
-   
+    
     z-index: 2;
     display: flex;
     flex-wrap: wrap;
@@ -547,7 +526,7 @@ parte del responsive */
     background-color: #ffffff;
     border-radius: 50%;
     padding: 15px;
-    margin: 10px;
+    margin: 8px 12px;
     width: 50px;
     height: 50px;
     font-size: 18px;
@@ -729,6 +708,7 @@ parte del responsive */
 }
 
 #bodyQS{
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -744,7 +724,18 @@ RESPONSIVE EMPIEZA ACA
 
 
 
-
+@media screen and (min-width: 100px) AND (max-width: 600px){
+    .contactenos {
+        left: -2vw;
+        margin: auto;
+        width: 104vw;
+        justify-content: center;
+        padding: 2px;
+        padding-top: 8px;
+        height: 50px;
+        margin-top: 2rem;
+    } 
+}
 
 
 
@@ -761,11 +752,21 @@ RESPONSIVE EMPIEZA ACA
         text-align: center;
     }
     .contactenos {
+        left: -2vw;
+        margin: auto;
+        width: 104vw;
         justify-content: center;
         padding: 2px;
         padding-top: 8px;
-        height: 30vh;
-        margin-top: 4px;
+        height: 50px;
+        margin-top: 2rem;
+    }
+    .contactenos .wrapper {
+        left: 0;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
     }
 
     .wrapper .icon {
@@ -820,7 +821,7 @@ RESPONSIVE EMPIEZA ACA
         margin: auto;
         margin-top: -6rem;
         position: fixed;
-        background-color: rgb(37, 115, 153);
+        background-color: var(--color-main);
         height: 5.5rem;
         width: 100vw;
         align-content: flex-start;
@@ -886,12 +887,6 @@ RESPONSIVE EMPIEZA ACA
         display: none;
     }
 
-    .contactenos {
-        width: auto;
-        height: auto;
-        margin-top: 0.35em;
-        padding: 3px;
-    }
 
     .wrapper .icon {
         width: 20px;
@@ -1120,7 +1115,7 @@ RESPONSIVE EMPIEZA ACA
         text-align: center;
         display: inline-block;
         padding: 1em;
-        background-color: rgb(209, 229, 248);
+        background-color: var(--color-carta);
         width: 90vw;
         position: relative;
         border-radius: 8px;
@@ -1147,35 +1142,12 @@ RESPONSIVE EMPIEZA ACA
 
 
 
-/* Media para respnsive en "quienes somos"*/
-@media screen and (max-width: 850px) {
-    .titulosquien {
-        padding: 0.8rem 0;
-        font-size: 3em;
 
-
-    }
-}
-
-@media screen and (min-width: 650px) AND (max-width: 850px) {
-
-    .containerp__quienesomos {
-        font-size: medium;
-    }
-
-
-}
 
 @media screen and (min-width: 550px) AND (max-width: 749px) {
 
-    .containerp__quienesomos {
-        font-size: small;
 
-    }
 
-    containerp {
-        padding: 6px;
-    }
 
     .containerp__carrousel {
         height: 19.2rem;
@@ -1195,14 +1167,7 @@ RESPONSIVE EMPIEZA ACA
 
     }
 
-    .containerp__quienesomos {
-        display: flex;
-        width: auto;
-        padding-left: 14px;
-        font-size: 16px;
-        font-weight: 700;
-    }
-
+  
     .containerp__carrousel {
         background-color: azure;
         height: 18rem;
@@ -1220,14 +1185,14 @@ RESPONSIVE EMPIEZA ACA
 }
 
 @media screen and (min-width: 1px) AND (max-width: 375px) {
-
-
-    .containerp__quienesomos {
-        font-size: 12px;
-        width: 95%;
+    .wrapper {
+        display: flex;
     }
 
-    containerp {
+
+
+
+    .containerp {
         display: flex;
         width: auto;
         margin-left: 1vw;
@@ -1235,12 +1200,7 @@ RESPONSIVE EMPIEZA ACA
 
     }
 
-    .titulosquien {
-        padding: 0.6rem 0;
-        font-size: 2em;
 
-
-    }
 
 
 }

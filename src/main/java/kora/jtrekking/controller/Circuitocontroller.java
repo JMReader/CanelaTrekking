@@ -35,7 +35,7 @@ public class Circuitocontroller {
 		Circuito circuitoEncontrado = repo.obtenerCircuitoid(id);
 		model.addAttribute("circ", circuitoEncontrado);
 		model.addAttribute("pag", "QS");
-		model.addAttribute("recom", repo.obtenerRecomendaciones(id));
+		//model.addAttribute("recom", repo.obtenerRecomendaciones(id));
 		return ("circuito");
 	}
 

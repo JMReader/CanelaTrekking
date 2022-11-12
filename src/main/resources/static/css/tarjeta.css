@@ -269,6 +269,10 @@
   }
 }
 @media screen and (max-width: 478px) {
+  .recomendaciones{
+    margin-left: 3vw;
+    justify-content: normal;
+}
   .recomendaciones .options {
     min-width: 280px;
   }

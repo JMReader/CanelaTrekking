@@ -1,5 +1,8 @@
 body{
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: auto;
 }
 .flexcon{
 
@@ -124,12 +127,17 @@ body{
         }
     }
     @media screen and (min-width: 100px) AND (max-width: 360px){
+        .recomendaciones{
+            margin-left: 1vw;
+        }
+        .flexcon{
+                    margin-left: 1vw;
+        }
         .flexcon__imagenes{
 
-            width: 128px;
-            height: 120px;
+            width: 156px;
+            /* height: 120px; */
             flex-grow: 1;
-
         }
         .flexcon__img__descip{
             

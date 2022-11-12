@@ -55,14 +55,11 @@ color: beige;
 .navpc{
     display:flex ;
     flex-wrap: wrap;
-    position: fixed;
     margin-top: -6rem;
     background-color: rgb(37, 115, 153);
     height: 6rem;
     width: 100vw;
     align-items: flex-end;
-    
-    
 }
 .navpc__contenedor{
     display: flex;

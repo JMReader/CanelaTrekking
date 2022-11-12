@@ -4,6 +4,8 @@
     <title th:text="${circ.nombre}">
         
     </title>
+  
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link th:rel="stylesheet" type="text/css" th:href="@{/css/normalize.css}" />
@@ -66,21 +68,23 @@
 
 
       <div class="flexcon__propiedades">
-        <div class="celda"><i class="fas fa-battery-empty"> Dificultad: </i><p th:text="${circ.dificultad}"> media</p></div>
-        <div class="celda"><i class="fas fa-arrow-alt-circle-down"> Desnivel: </i><p th:text="${circ.desnivel}+' mts'"> -400 mts</p></div>
-        <div class="celda"><i class="fas fa-clock"> Duracion: </i><p th:text="${circ.duracion}+' horas'"> 4 horas</p></div>
-        <div class="celda"><i class="fas fa-cloud-rain">Operable: </i><p th:text="${circ.operable}" >todo el año</p></div>
-        <div class="celda"><i class="fas fa-map-marker-alt"> Region: </i><p th:text="${circ.region}" >Puna</p></div>
-        <div class="celda"><i class="fas fa-hiking"> Distancia: </i><p th:text="${circ.distancia}+' KM'" > 4Km</p></div>
-        <a class=" celda " href=""><div class=><i class="fab fa-whatsapp"> Consulte por wpp</i></div></a>
-        <a class="celda" href=""><i class="fab fa-instagram"> Consulte por IG</i></a>
+        <div class="celda"><i class="fas fa-battery-empty">  </i><p class="celda__t">Dificultad:</p><p th:text="${circ.dificultad}"> media</p></div>
+        <div class="celda"><i class="fas fa-arrow-alt-circle-down">  </i><p class="celda__t">Desnivel:</p><p th:text="${circ.desnivel}+' mts'"> -400 mts</p></div>
+        <div class="celda"><i class="fas fa-clock"></i><p class="celda__t"> Duracion: </p><p th:text="${circ.duracion}+' horas'"> 4 horas</p></div>
+        <div class="celda"><i class="fas fa-cloud-rain"> </i><p class="celda__t">Operable:</p>  <p th:text="${circ.operable}" >todo el año</p></div>
+        <div class="celda"><i class="fas fa-map-marker-alt">  </i><p class="celda__t">Region:</p><p th:text="${circ.region}" >Puna</p></div>
+        <div class="celda"><i class="fas fa-hiking"> </i><p class="celda__t">Distancia: </p><p th:text="${circ.distancia}+' KM'" > 4Km</p></div>
+        <a class=" celda " href="
+        https://wa.me/543885148856?text=Hola%20buenas%20queria%20consultar%20sobre%20el%20circuito%20${circ.nombre}%20
+        "><div class=><i class="fab fa-whatsapp"> </i><p class="celda__t">Consulte por wpp</p></div></a>
+        <a class="celda" href=""><i class="fab fa-instagram"> </i><p class="celda__t">Consulte por IG</p></a>
       </div>
     </div>
 
 
     <h4 class="titulos__recomendacion" >Otros Circuitos :</h4>
 
-  <div th:insert="layouts/recomendaciones :: recomendaciones"></div>
+<!-- <div th:insert="layouts/recomendaciones :: recomendaciones"></div>--> 
 
  
 
@@ -89,11 +93,8 @@
 
 
 <div th:insert="layouts/footer :: footer"></div>
-    
-    
           <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
       <script th:src="@{/webj/script.js}" type="text/javascript"></script>
-
 </body>
 
 
