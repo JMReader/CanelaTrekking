@@ -9,8 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link th:rel="stylesheet" type="text/css" th:href="@{/css/normalize.css}" />
-	<link th:rel="stylesheet" type="text/css" th:href="@{/css/estilosk.css}"/>
-      <link rel="stylesheet" type="text/css" th:href=" @{/css/Responsivecircuitos.css}" > 
+	  <link th:rel="stylesheet" type="text/css" th:href="@{/css/estilosk.css}"/>
+    <link rel="stylesheet" type="text/css" th:href=" @{/css/Responsivecircuitos.css}" > 
       
       <link rel="stylesheet" th:href="@{/css/tarjeta.css}" >
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
@@ -19,10 +19,18 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
       <script src="https://kit.fontawesome.com/f2ccc389f0.js" crossorigin="anonymous"></script>
+      <script th:src="@{/webj/funciones.js}"></script>
 
       <link rel="stylesheet" th:href="@{/css/cirucitos.css}" >
 
+
+
+
 </head>
+
+
+
+
 <body class="bodytodos">
   <div th:insert="layouts/header :: header" ></div>
       <div class="flexcon">
@@ -67,8 +75,6 @@
       
 
       </div>
-
-
       <div class="flexcon__propiedades">
         <div class="celda"><i class="fas fa-battery-empty"></i><p class="celda__t">Dificultad: </p><p th:text="${circ.dificultad}"> media</p></div>
         <div class="celda"><i class="fas fa-arrow-alt-circle-down">  </i><p class="celda__t">Desnivel: </p><p th:text="${circ.desnivel}+' mts'"> -400 mts</p></div>
@@ -76,9 +82,7 @@
         <div class="celda"><i class="fas fa-cloud-rain"> </i><p class="celda__t">Operable: </p>  <p th:text="${circ.operable}" >todo el año</p></div>
         <div class="celda"><i class="fas fa-map-marker-alt">  </i><p class="celda__t">Region: </p><p th:text="${circ.region}" >Puna</p></div>
         <div class="celda"><i class="fas fa-hiking"> </i><p class="celda__t">Distancia: </p><p th:text="${circ.distancia}+' KM'" > 4Km</p></div>
-        <a class=" celda " href="
-        https://wa.me/543885148856?text=Hola%20buenas%20queria%20consultar%20sobre%20el%20circuito%20${circ.nombre}%20
-        "><div class=><i class="fab fa-whatsapp"> </i><p class="celda__t">Consulte por wpp</p></div></a>
+        <a th:onclick="enviarwpp([[${circ.nombre}]])" class=" celda " href=""><div class=><i class="fab fa-whatsapp"> </i><p class="celda__t">Consulte por wpp</p></div></a>
         <a class="celda" href=""><i class="fab fa-instagram"> </i><p class="celda__t">Consulte por IG</p></a>
       </div>
     </div>
