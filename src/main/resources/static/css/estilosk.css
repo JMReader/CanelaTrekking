@@ -3,6 +3,7 @@ header {
 }
 
 body {
+    
     padding-top: 6rem;
     max-width: 100vw;
     background: rgb(179, 216, 255);
@@ -515,7 +516,13 @@ parte del responsive */
 /*parte sacada de chrome xddd*/
 
 
-
+/*recomnedaciones*/
+.links-nom:visited{
+    color: #ffffff;
+}
+.links-nom:link{
+    color: #dbdbff;
+}
 
 .wrapper {
     display: block;

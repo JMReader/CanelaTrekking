@@ -94,7 +94,6 @@ public class CircuitoServiceMySQL implements ICircuitoService{
 		
 		for(int i=0;i<aux.size();i++) {
 			if(aux.get(i).getId()==id) {
-				
 				aux.remove(i);
 			}
 		}

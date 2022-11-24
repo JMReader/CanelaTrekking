@@ -35,7 +35,7 @@ public class Circuitocontroller {
 		Circuito circuitoEncontrado = repo.obtenerCircuitoid(id);
 		model.addAttribute("circ", circuitoEncontrado);
 		model.addAttribute("pag", "QS");
-		//model.addAttribute("recom", repo.obtenerRecomendaciones(id));
+		model.addAttribute("recom", repo.obtenerRecomendaciones(id));
 		return ("circuito");
 	}
 
@@ -58,6 +58,7 @@ public class Circuitocontroller {
 	public String guardarCirc(@RequestParam("file") MultipartFile file, @RequestParam("file1") MultipartFile file1,
 			@RequestParam("file2") MultipartFile file2, @Valid @ModelAttribute("circuito") Circuito nuevoCirc,
 			BindingResult resultado, Model model) throws IOException {
+			
 		byte[] content = file.getBytes();
 		String img1 = Base64.getEncoder().encodeToString(content);
 		nuevoCirc.setImagen(img1);

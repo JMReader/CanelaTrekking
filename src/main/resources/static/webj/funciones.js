@@ -3,3 +3,11 @@ function enviarwpp (ashe) {
     console.log(ashe);
     window.open(x);
  }
+ function mostrarBusqueda(){
+    if(document.getElementById("listaBuscar").style.display=="none"){
+        document.getElementById("listaBuscar").style.display="flex"
+    }else{
+        document.getElementById("listaBuscar").style.display="none"
+    }
+
+ }
