@@ -35,7 +35,7 @@ public class HomeController {
 		// esa pagina
 		return "redirect:/index";
 	}
-
+	
 	@GetMapping({ "/home", "/index" })
 	public String cargarhome(Model model) {
 		//vamos a comprobar si tenemos guardada en el servidor la informacion para mostrarla en la aplicacion, de no ternerla la buscamos
@@ -183,5 +183,14 @@ public class HomeController {
 		model.addAttribute("circuitos", circuitoSer.buscarCircuitos(nombre));
 		model.addAttribute("titulo", ("Busqueda de '"+ nombre+"'"));
 		return "index";
+	}
+	@GetMapping("editarCircuitos")
+	public String CircuitosAdmin(Model model){
+		todosC = circuitoSer.ObtenerCircuitos();
+		if(todosC==null){
+			todosC = circuitoSer.ObtenerCircuitos();
+		}
+		model.addAttribute("circuitos", todosC);
+		return("adm-editar");
 	}
 }

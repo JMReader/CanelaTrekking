@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+  <head>
+    <link
+      th:rel="stylesheet"
+      type="text/css"
+      th:href="@{/css/estiloform.css}"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/adm.css}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script
+      src="https://kit.fontawesome.com/f2ccc389f0.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Circuitos</title>
+  </head>
+
+  <div th:insert="layouts/navderecha :: sidenav" class="nav-costado"></div>
+  <main class="adm-car__buscador">
+    <div class="buscador__container">
+      <div th:each="circ: ${circuitos}" th:href="@{'/circuito/'+${circ.id}}" class="container--circ">
+        <div  class="circ-info">
+          <img th:src="*{'data:;base64,'+circ.imagen}" class="info-img" height="64px" alt="" />
+          <div>
+            <b class="titulo" th:text="${circ.nombre}"> titulo </b>
+            <p th:text="${circ.region}">region</p>
+          </div>
+        </div>
+        <div>
+          <button button type="button" class="btn btn-danger">Eliminar</button>
+          <button button type="button" class="btn btn-info">Editar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"
+  ></script>
+</html>

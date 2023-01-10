@@ -43,7 +43,7 @@ public class Circuitocontroller {
 	public String crearCirc(Model model) {
 		LOGGER.info("METHOD: ingresando el metodo cargar");
 		model.addAttribute("circuito", new Circuito());
-		return ("cargar");
+		return ("adm-cargar");
 	}
 
 	@GetMapping("editar/circuito/{id}")
@@ -51,8 +51,9 @@ public class Circuitocontroller {
 		LOGGER.info("METHOD: ingresando el metodo cargar");
 		model.addAttribute("editmode", true);
 		model.addAttribute("circuito", repo.obtenerCircuitoid(id));
-		return ("cargar");
+		return ("adm-cargar");
 	}
+	
 
 	@PostMapping(value = "/circuito/guardar", consumes = "multipart/form-data")
 	public String guardarCirc(@RequestParam("file") MultipartFile file, @RequestParam("file1") MultipartFile file1,
