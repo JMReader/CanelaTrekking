@@ -12,7 +12,7 @@
 <body>
     <div th:insert="layouts/navderecha :: sidenav" class="nav-costado" ></div>
 
-    <div class="formFlexPadre">
+    <div class="formFlexPadre" th:if="${circuito.id == null}">
        <p class=" form__tit">Cargar Circuito</p> 
         <form th:object="${circuito}" th:action=" @{/circuito/guardar}" class="formFlex" method="post" enctype="multipart/form-data">
             <div class="formFlex__div">

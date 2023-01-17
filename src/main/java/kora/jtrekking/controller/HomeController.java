@@ -184,13 +184,5 @@ public class HomeController {
 		model.addAttribute("titulo", ("Busqueda de '"+ nombre+"'"));
 		return "index";
 	}
-	@GetMapping("editarCircuitos")
-	public String CircuitosAdmin(Model model){
-		todosC = circuitoSer.ObtenerCircuitos();
-		if(todosC==null){
-			todosC = circuitoSer.ObtenerCircuitos();
-		}
-		model.addAttribute("circuitos", todosC);
-		return("adm-editar");
-	}
+
 }

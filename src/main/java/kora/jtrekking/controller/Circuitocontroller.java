@@ -1,6 +1,7 @@
 package kora.jtrekking.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
 
 import javax.validation.Valid;
@@ -20,13 +21,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import kora.jtrekking.model.Circuito;
-
+import kora.jtrekking.repoDAO.ICircuitoRepoDAO;
 import kora.jtrekking.serviceImp.CircuitoServiceMySQL;
 
 @Controller
 public class Circuitocontroller {
-	private static final Log LOGGER = LogFactory.getLog(Circuitocontroller.class);
 
+
+	private static final Log LOGGER = LogFactory.getLog(Circuitocontroller.class);
+	private ArrayList<Circuito> todosC = new ArrayList<Circuito>();
 	@Autowired
 	CircuitoServiceMySQL repo;
 
@@ -41,8 +44,10 @@ public class Circuitocontroller {
 
 	@GetMapping("cargar/circuito")
 	public String crearCirc(Model model) {
+		Circuito circ = new Circuito();
 		LOGGER.info("METHOD: ingresando el metodo cargar");
-		model.addAttribute("circuito", new Circuito());
+		model.addAttribute("circuito", circ);
+		System.out.print(circ);
 		return ("adm-cargar");
 	}
 
@@ -75,6 +80,14 @@ public class Circuitocontroller {
 		repo.guardarCircuito(nuevoCirc);
 
 		return ("redirect:/cargar/circuito");
+	}
+
+
+	@GetMapping("editarCircuitos")
+	public String CircuitosAdmin(Model model){
+		todosC = repo.ObtenerCircuitos();
+		model.addAttribute("circuitos", todosC);
+		return("adm-editar");
 	}
 
 }

@@ -40,6 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/cargar/circuito").authenticated()
                 .antMatchers("/editar/circuito/{id}").authenticated()
+                .antMatchers("/editarCircuitos").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin();
