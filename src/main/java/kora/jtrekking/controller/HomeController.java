@@ -40,10 +40,9 @@ public class HomeController {
 	public String cargarhome(Model model) {
 		//vamos a comprobar si tenemos guardada en el servidor la informacion para mostrarla en la aplicacion, de no ternerla la buscamos
 		//pero si la tenemos la usamos directo de aca 
-		//if (cache==false){
-		//	cache=true;
+		if (todosC==null){
 			todosC = circuitoSer.ObtenerCircuitos();
-		//}
+		}
 		// mandamos un atributo al modelo de pagina que nos servira para mostrar el
 		// header de dsitintas maneras dependiendo el tipo de pagina que estemos
 		// consultando.

@@ -26,6 +26,8 @@ import kora.jtrekking.serviceImp.CircuitoServiceMySQL;
 
 @Controller
 public class Circuitocontroller {
+	@Autowired
+	HomeController homeC;
 
 
 	private static final Log LOGGER = LogFactory.getLog(Circuitocontroller.class);
@@ -35,6 +37,7 @@ public class Circuitocontroller {
 
 	@GetMapping("/circuito/{id}")
 	public String verCirc(Model model, @PathVariable(name = "id") Integer id) {
+		homeC.todosC=null;
 		Circuito circuitoEncontrado = repo.obtenerCircuitoid(id);
 		model.addAttribute("circ", circuitoEncontrado);
 		model.addAttribute("pag", "QS");
