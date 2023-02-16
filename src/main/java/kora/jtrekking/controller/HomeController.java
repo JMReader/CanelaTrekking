@@ -69,8 +69,6 @@ public class HomeController {
 		ArrayList<Circuito> Circvalle = new ArrayList<Circuito>();
 		if(todosC!=null){
 			Circvalle= circuitoSer.obtenerRegionNosql("valle", todosC);
-			System.out.println("asheee");
-
 		}else {
 			Circvalle= circuitoRepo.mostrarCircuitosValle();
 		}
@@ -82,24 +80,50 @@ public class HomeController {
 
 	@GetMapping({ "/puna" })
 	public String cargaPuna(Model model) {
+
+		ArrayList<Circuito> Circpuna = new ArrayList<Circuito>();
+		if(todosC!=null){
+			Circpuna= circuitoSer.obtenerRegionNosql("puna", todosC);
+		}else {
+			Circpuna= circuitoRepo.mostrarCircuitosPuna();
+		}
+
 		model.addAttribute("pag", "pun");
-		model.addAttribute("circuitos", circuitoRepo.mostrarCircuitosPuna());
+		model.addAttribute("circuitos", Circpuna);
 		model.addAttribute("titulo", "Circuitos de la Puna");
 		return "index";
 	}
 
 	@GetMapping({ "/quebrada" })
 	public String cargaQuebrada(Model model) {
+
+		ArrayList<Circuito> Circqueb = new ArrayList<Circuito>();
+		if(todosC!=null){
+			Circqueb= circuitoSer.obtenerRegionNosql("quebrada", todosC);
+		}else {
+			Circqueb= circuitoRepo.mostrarCircuitosQueb();
+		}
+
 		model.addAttribute("pag", "queb");
-		model.addAttribute("circuitos", circuitoRepo.mostrarCircuitosQueb());
+		model.addAttribute("circuitos", Circqueb );
 		model.addAttribute("titulo", "Circuitos de la Quebrada");
 		return "index";
 	}
 
 	@GetMapping({ "/yungas" })
 	public String cargaYungas(Model model) {
+
+		ArrayList<Circuito> Circyun= new ArrayList<Circuito>();
+		if(todosC!=null){
+			Circyun= circuitoSer.obtenerRegionNosql("yungas", todosC);
+		}else {
+			Circyun= circuitoRepo.mostrarCircuitosYung();
+		}
+
+
+
 		model.addAttribute("pag", "yung");
-		model.addAttribute("circuitos", circuitoRepo.mostrarCircuitosYung());
+		model.addAttribute("circuitos", Circyun);
 		model.addAttribute("titulo", "Circuitos de las Yungas");
 		return "index";
 	}

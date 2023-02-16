@@ -19,11 +19,11 @@ public interface ICircuitoRepoDAO extends CrudRepository <Circuito, Integer>{
 	@Query(value = "SELECT * FROM canelat.circuitos where region =  'valle';",nativeQuery=true)
 	public ArrayList<Circuito> mostrarCircuitosValle();
 	@Query(value = "SELECT * FROM canelat.circuitos where region =  'puna';",nativeQuery=true)
-	public List<Circuito> mostrarCircuitosPuna();
+	public ArrayList<Circuito> mostrarCircuitosPuna();
 	@Query(value = "SELECT * FROM canelat.circuitos where region =  'quebrada';",nativeQuery=true)
-	public List<Circuito> mostrarCircuitosQueb();
+	public ArrayList<Circuito> mostrarCircuitosQueb();
 	@Query(value = "SELECT * FROM canelat.circuitos where region =  'yungas';",nativeQuery=true)
-	public List<Circuito> mostrarCircuitosYung();
+	public ArrayList<Circuito> mostrarCircuitosYung();
 	@Query(value = "SELECT * FROM canelat.circuitos ORDER BY RAND() LIMIT 0,6;",nativeQuery=true)
 	public List<Circuito> otrosCircuitos();
 	@Query(value = "SELECT * FROM canelat.circuitos where dificultad ='baja';",nativeQuery=true)
