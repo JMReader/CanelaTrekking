@@ -83,6 +83,7 @@ public class CircuitoServiceMySQL implements ICircuitoService{
 		 
 		return Repo.findByid(id).orElseThrow(null);
 	}
+	
 
 	@Override
 	public ArrayList<kora.jtrekking.model.Circuito> obtenerRecomendaciones(int id) {
@@ -114,6 +115,36 @@ public class CircuitoServiceMySQL implements ICircuitoService{
 			}
 		}
 		return finale;
+	}
+
+	@Override
+	public kora.jtrekking.model.Circuito obtenerCircNosql(ArrayList<kora.jtrekking.model.Circuito> circuitos, int id) {
+		// TODO Auto-generated method stub
+		int i;
+		Circuito aux = new Circuito();
+		for(i=0;i<circuitos.size(); i++){
+			if(circuitos.get(i).getId()==id){
+				aux = circuitos.get(i);
+				i = circuitos.size();
+			}
+		}
+		return aux;
+	}
+
+	@Override
+	public ArrayList<kora.jtrekking.model.Circuito> obtenerRegionNosql(String region, ArrayList<Circuito> circuitos) {
+		//nos permite filtrar los circuitos por region en el servidor y no en sql lo que nos permite traer los datos mas rapido :)
+		// TODO Auto-generated method stub
+		ArrayList<Circuito> aux = new ArrayList<Circuito>();
+		for(int i = 0; i<circuitos.size();i++){
+		
+			if(circuitos.get(i).getRegion().equals(region)){
+				System.out.println(circuitos.get(i).getRegion());
+				aux.add(circuitos.get(i));
+			}
+		}
+		
+		return aux;
 	}
 }
 

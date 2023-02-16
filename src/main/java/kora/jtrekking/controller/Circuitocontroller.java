@@ -32,6 +32,7 @@ public class Circuitocontroller {
 	private ArrayList<Circuito> todosC = new ArrayList<Circuito>();
 	@Autowired
 	CircuitoServiceMySQL repo;
+	
 
 	@GetMapping("/circuito/{id}")
 	public String verCirc(Model model, @PathVariable(name = "id") Integer id) {

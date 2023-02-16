@@ -14,19 +14,21 @@ import kora.jtrekking.model.Circuito;
 import kora.jtrekking.model.Usuario;
 import kora.jtrekking.repoDAO.ICircuitoRepoDAO;
 import kora.jtrekking.service.ICircuitoService;
+import kora.jtrekking.serviceImp.CircuitoServiceMySQL;
 import kora.jtrekking.serviceImp.UsuarioServiceMySQL;
 
 @Controller
 public class HomeController {
 	boolean cache = false;
-	ArrayList<Circuito> todosC = new ArrayList<Circuito>();
+	ArrayList<Circuito> todosC = null;
 	@Autowired
 	ICircuitoRepoDAO circuitoRepo;
+	
 	@Autowired
 	UsuarioServiceMySQL usuarioRepo;
 	@Autowired
-	@Qualifier("implementacionCircuito")
-	ICircuitoService circuitoSer;
+	
+	CircuitoServiceMySQL circuitoSer;
 
 
 	@GetMapping({ "/" })
@@ -40,15 +42,13 @@ public class HomeController {
 	public String cargarhome(Model model) {
 		//vamos a comprobar si tenemos guardada en el servidor la informacion para mostrarla en la aplicacion, de no ternerla la buscamos
 		//pero si la tenemos la usamos directo de aca 
-		//if (cache==false){
+		if (todosC == null){
 		//	cache=true;
 			todosC = circuitoSer.ObtenerCircuitos();
-		//}
+		}
 		// mandamos un atributo al modelo de pagina que nos servira para mostrar el
 		// header de dsitintas maneras dependiendo el tipo de pagina que estemos
 		// consultando.
-
-		
 		//usuarioRepo.guardarUsuario(us);
 		
 		model.addAttribute("pag", "home");
@@ -66,8 +66,16 @@ public class HomeController {
 	/* separando los circuitos por region */
 	@GetMapping({ "/valle" })
 	public String cargaValle(Model model) {
+		ArrayList<Circuito> Circvalle = new ArrayList<Circuito>();
+		if(todosC!=null){
+			Circvalle= circuitoSer.obtenerRegionNosql("valle", todosC);
+			System.out.println("asheee");
+
+		}else {
+			Circvalle= circuitoRepo.mostrarCircuitosValle();
+		}
 		model.addAttribute("pag", "val");
-		model.addAttribute("circuitos", circuitoRepo.mostrarCircuitosValle());
+		model.addAttribute("circuitos", Circvalle);
 		model.addAttribute("titulo", "Circuitos del Valle");
 		return "index";
 	}
