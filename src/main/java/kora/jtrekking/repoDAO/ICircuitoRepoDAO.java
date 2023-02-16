@@ -3,6 +3,7 @@ package kora.jtrekking.repoDAO;
 import java.util.List;
 import java.util.Optional;
 
+import java.util.ArrayList;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ public interface ICircuitoRepoDAO extends CrudRepository <Circuito, Integer>{
 	public Optional<Circuito> findByid(Integer idCircuito);
 	
 	@Query(value = "SELECT * FROM canelat.circuitos where region =  'valle';",nativeQuery=true)
-	public List<Circuito> mostrarCircuitosValle();
+	public ArrayList<Circuito> mostrarCircuitosValle();
 	@Query(value = "SELECT * FROM canelat.circuitos where region =  'puna';",nativeQuery=true)
 	public List<Circuito> mostrarCircuitosPuna();
 	@Query(value = "SELECT * FROM canelat.circuitos where region =  'quebrada';",nativeQuery=true)
